@@ -1,10 +1,15 @@
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    return element;
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
   }
-  
-  document.body.appendChild(component());
+  render() {
+    return (
+      <div>Hello</div>
+    )
+  }
+}
+
+ReactDOM.render(<App /> , document.getElementById("app"));
