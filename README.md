@@ -4,10 +4,9 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/lmwy-labs/right-reservations
+  - https://github.com/lmwy-labs/main-menu
+  - https://github.com/lmwy-labs/main-gallery
 
 ## Table of Contents
 
