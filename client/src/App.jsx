@@ -4,14 +4,18 @@ import SummaryComponent from './components/SummaryComponent.jsx';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+    };
   }
+
   render() {
-    
     return (
       <div><SummaryComponent /></div>
-    )
+    );
   }
 }
 
-ReactDOM.render(<App /> , document.getElementById("app"));
+export default App;
+
+ReactDOM.render(<App />, document.getElementById('app'));
