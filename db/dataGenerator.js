@@ -13,7 +13,6 @@ const genUserData = () => {
       numberOfReviews: Math.floor(Math.random() * 200) + 1,
     };
     userArray.push(obj);
-    // console.log(userArray);
   }
   return userArray;
 };
@@ -35,7 +34,6 @@ const genReviewData = () => {
         date_dined: faker.date.past(),
       };
       eachRestReviewData.push(obj);
-      // console.log(reviewArray);
     }
     masterReviewArray.push(eachRestReviewData);
   }
@@ -71,7 +69,7 @@ const populateReviewsTable = (array) => {
     const queryString = 'INSERT INTO reviews(overallRating, foodRating, serviceRating, ambienceRating, comment, date_dined, r_id, u_id) VALUES (?,?,?,?,?,?,?, (SELECT user_id from users WHERE user_id = ?))';
     for (let b = 0; b < array[a].length; b++) {
       db.connection.query(queryString, [array[a][b].overallRating, array[a][b].foodRating, array[a][b].serviceRating, array[a][b].ambienceRating, array[a][b].comment, array[a][b].date_dined, array[a][b].r_id, array[a][b].u_id],
-        (error, results, field) => {
+        (error, results) => {
           if (error) {
             console.log(error);
           } else {
