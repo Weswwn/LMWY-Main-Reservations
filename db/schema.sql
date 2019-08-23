@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS reviews (
     serviceRating int NOT NULL,
     ambienceRating int NOT NULL,
     comment TEXT NOT NULL,
-    r_id int NOT NULL,
+    r_id VARCHAR(50) NOT NULL,
     u_id int NOT NULL,
     date_dined date NOT NULL,
     FOREIGN KEY (u_id)

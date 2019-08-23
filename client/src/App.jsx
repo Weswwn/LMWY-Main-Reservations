@@ -13,7 +13,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('/api/restaurants/?/reviews', {
       params: {
-        // r_id: 1,
+        r_id: ,
       },
     });
   }
