@@ -9,7 +9,9 @@ CREATE TABLE IF NOT EXISTS users (
     username varchar(30) NOT NULL,
     location TEXT NOT NULL,
     numberOfReviews int NOT NULL,
-    profilePicture LONGBLOB
+    profilePicture LONGBLOB,
+    vipStatus BOOLEAN
+
 );
 
 CREATE TABLE IF NOT EXISTS reviews (
@@ -19,8 +21,11 @@ CREATE TABLE IF NOT EXISTS reviews (
     serviceRating int NOT NULL,
     ambienceRating int NOT NULL,
     comment TEXT NOT NULL,
+    r_id int NOT NULL,
     u_id int NOT NULL,
+    date_dined date NOT NULL,
     FOREIGN KEY (u_id)
         REFERENCES users (user_id) ON DELETE CASCADE
 );
+
 
