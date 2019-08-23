@@ -29,7 +29,7 @@ const genReviewData = () => {
         serviceRating: Math.floor(Math.random() * 5) + 1,
         ambienceRating: Math.floor(Math.random() * 5) + 1,
         comment: faker.lorem.paragraph(),
-        r_id: z,
+        r_id: `r${z}`,
         u_id: x,
         date_dined: faker.date.past(),
       };
