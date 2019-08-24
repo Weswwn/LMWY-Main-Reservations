@@ -7,20 +7,30 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      listOfReviews: [],
     };
   }
 
   componentDidMount() {
-    axios.get('/api/restaurants/?/reviews', {
+    let urlParam = document.location.pathname.substring(13);
+    urlParam = urlParam.substring(0, urlParam.length - 1);
+    console.log(urlParam);
+    axios.get('/api/restaurants/:id/reviews', {
       params: {
-        // r_id:
+        id: urlParam,
       },
-    });
+    })
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          listOfReviews: response.data,
+        });
+      });
   }
 
   render() {
     return (
-      <div><ReviewEntry /></div>
+      <div><ReviewEntry listOfReviews={this.state.listOfReviews} /></div>
     );
   }
 }

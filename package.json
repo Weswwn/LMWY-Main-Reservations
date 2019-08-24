@@ -12,7 +12,7 @@
     "build": "npx webpack --mode production --watch",
     "start": "nodemon ./server/Server.js",
     "test": "jest test",
-    "gen": "node ./db/dataGenerator.js"
+    "seed": "node ./db/dataGenerator.js"
   },
   "dependencies": {
     "axios": "^0.19.0",

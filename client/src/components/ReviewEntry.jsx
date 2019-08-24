@@ -4,13 +4,12 @@ class ReviewEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      overallRating: null,
+      overallRating: this.props.listOfReviews.overallRating,
       foodRating: null,
       serviceRating: null,
       ambienceRating: null,
       dateDined: null,
       comment: null,
-
       profilePicture: null,
       location: null,
       numberOfReviews: 110,
@@ -18,10 +17,11 @@ class ReviewEntry extends React.Component {
   }
 
   render() {
-    // const { numberOfReviews } = this.state;
+    // const { overallRating } = this.state;
+    // const { foodRating } = this.state;
     return (
       <div className="review-container">
-        Hello
+        hi
       </div>
     );
   }
