@@ -18,7 +18,7 @@ const genUserData = () => {
 };
 
 const genReviewData = () => {
-  const numberOfReviews = 5;
+  const numberOfReviews = 20;
   const masterReviewArray = [];
   for (let z = 1; z < 101; z++) {
     const eachRestReviewData = [];
