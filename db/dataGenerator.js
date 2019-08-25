@@ -18,10 +18,10 @@ const genUserData = () => {
 };
 
 const genReviewData = () => {
-  const numberOfReviews = 20;
   const masterReviewArray = [];
   for (let z = 1; z < 101; z++) {
     const eachRestReviewData = [];
+    const numberOfReviews = Math.random() * (20 - 5) + 5;
     for (let x = 1; x < numberOfReviews; x++) {
       const obj = {
         overallRating: Math.floor(Math.random() * 5) + 1,
