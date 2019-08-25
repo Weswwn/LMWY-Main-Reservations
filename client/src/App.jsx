@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import ReviewEntry from './components/ReviewEntry.jsx';
+import ReviewList from './components/ReviewList.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,8 +29,9 @@ class App extends React.Component {
   }
 
   render() {
+    const { listOfReviews } = this.state;
     return (
-      <div><ReviewEntry listOfReviews={this.state.listOfReviews} /></div>
+      <div><ReviewList listOfReviews={listOfReviews} /></div>
     );
   }
 }
