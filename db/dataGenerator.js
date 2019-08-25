@@ -4,7 +4,7 @@ const db = require('./dbConnection.js');
 const genUserData = () => {
   const userArray = [];
   // Create 50 users for each restaurant
-  for (let y = 0; y < 50; y++) {
+  for (let y = 0; y < 100; y++) {
     const obj = {
       username: faker.name.findName(),
       location: faker.address.city(),
@@ -21,7 +21,7 @@ const genReviewData = () => {
   const masterReviewArray = [];
   for (let z = 1; z < 101; z++) {
     const eachRestReviewData = [];
-    const numberOfReviews = Math.random() * (20 - 5) + 5;
+    const numberOfReviews = Math.random() * (100 - 10) + 10;
     for (let x = 1; x < numberOfReviews; x++) {
       const obj = {
         overallRating: Math.floor(Math.random() * 5) + 1,
@@ -50,7 +50,7 @@ const populateUserTable = () => {
   for (let i = 0; i < userArray.length; i++) {
     db.connection.query(queryString,
       [userArray[i].username, userArray[i].location, userArray[i].numberOfReviews, userArray[i].profilePicture, userArray[i].vipStatus],
-      (error, results, field) => {
+      (error, results) => {
         if (error) {
           console.log(error);
         } else {
