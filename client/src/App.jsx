@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ReviewList from './components/ReviewList.jsx';
 
@@ -35,7 +34,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
-
-ReactDOM.render(<App />, document.getElementById('app'));

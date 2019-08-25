@@ -8,7 +8,7 @@ class ReviewEntry extends React.Component {
       foodRating: this.props.eachReview.foodRating,
       serviceRating: this.props.eachReview.serviceRating,
       ambienceRating: this.props.eachReview.ambienceRating,
-      dateDined: this.props.eachReview.dateDined,
+      dateDined: this.props.eachReview.date_dined,
       comment: this.props.eachReview.comment,
       profilePicture: null,
       location: this.props.eachReview.location,
