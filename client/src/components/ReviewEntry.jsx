@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import StarRatingComponent from 'react-star-rating-component';
 
 const Rating = styled.span`
   color: red;
@@ -67,6 +68,15 @@ class ReviewEntry extends React.Component {
         </User>
 
         <div className="each-rating">
+          <div>
+            <StarRatingComponent
+              name="rate2"
+              editing={false}
+              value={this.state.overallRating}
+              starColor="#DA3743"
+              emptyStarColor="#e8e6e1"
+            />
+          </div>
           <div className="date-dined">{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
           <b>Overall</b>
           {' '}
