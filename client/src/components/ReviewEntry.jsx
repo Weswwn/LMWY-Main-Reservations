@@ -1,4 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Rating = styled.span`
+  color: red;
+`;
+
+const Body = styled.div`
+  display: flex;
+  padding: 30 15% 30 15%;
+  max-width: 40%;
+  max-height: 40%;
+  border-bottom: 1px solid grey;
+`;
 
 class ReviewEntry extends React.Component {
   constructor(props) {
@@ -18,13 +31,43 @@ class ReviewEntry extends React.Component {
   }
 
   render() {
-    // const { overallRating } = this.state;
-    // const { foodRating } = this.state;
     return (
-      <div className="review-entry-container">
-        {this.state.overallRating}
-        {this.state.username}
-      </div>
+      <Body className="review-entry-container">
+        <div className="each-rating">
+          <div>{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
+          <b>Overall</b>
+          {' '}
+          {' '}
+          <Rating className="rating">
+            {this.state.overallRating}
+          </Rating>
+          {' '}
+          {' '}
+          <b>Food</b>
+          {' '}
+          {' '}
+          <Rating className="rating">
+            {this.state.foodRating}
+          </Rating>
+          {' '}
+          {' '}
+          <b>Service</b>
+          {' '}
+          {' '}
+          <Rating className="rating">
+            {this.state.serviceRating}
+          </Rating>
+          {' '}
+          {' '}
+          <b>Ambience</b>
+          {' '}
+          {' '}
+          <Rating className="rating">
+            {this.state.ambienceRating}
+          </Rating>
+        </div>
+
+      </Body>
     );
   }
 }
