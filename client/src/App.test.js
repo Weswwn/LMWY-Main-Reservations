@@ -30,7 +30,10 @@ describe('ReviewList with one review', () => {
 
   it('ReviewEntry state should match prop passed in', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
+    console.log(wrapper.find('.rating-service').debug());
 
-    // expect(wrapper.find('.review-entry-container')).toBe(4);
+    expect(wrapper.find('.rating-service').text()).toEqual('5');
+    // console.log(wrapper.find('.Rating-food'));
+    // expect(wrapper.find('.rating-food')).toBe();
   });
 });
