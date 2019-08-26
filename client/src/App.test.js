@@ -1,7 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
-import App from './App.jsx';
 import ReviewEntry from './components/ReviewEntry';
 
 // Test that ReviewList's props has the listOfReviews that we passed
