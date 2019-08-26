@@ -77,11 +77,11 @@ class ReviewEntry extends React.Component {
               emptyStarColor="#e8e6e1"
             />
           </div>
-          <div>{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
+          <div className="date-dined">{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
           <b>Overall</b>
           {' '}
           {' '}
-          <Rating className="rating">
+          <Rating className="rating-overall">
             {this.state.overallRating}
           </Rating>
           {' '}
@@ -89,7 +89,7 @@ class ReviewEntry extends React.Component {
           <b>Food</b>
           {' '}
           {' '}
-          <Rating className="rating">
+          <Rating className="rating-food">
             {this.state.foodRating}
           </Rating>
           {' '}
@@ -97,7 +97,7 @@ class ReviewEntry extends React.Component {
           <b>Service</b>
           {' '}
           {' '}
-          <Rating className="rating">
+          <Rating className="rating-service">
             {this.state.serviceRating}
           </Rating>
           {' '}
@@ -105,12 +105,12 @@ class ReviewEntry extends React.Component {
           <b>Ambience</b>
           {' '}
           {' '}
-          <Rating className="rating">
+          <Rating className="rating-ambience">
             {this.state.ambienceRating}
           </Rating>
           {' '}
           {' '}
-          <Comment className="comment">
+          <Comment className="rating-comment">
             {this.state.comment}
           </Comment>
 
