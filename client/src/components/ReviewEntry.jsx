@@ -34,7 +34,7 @@ const User = styled.div`
   width: 6rem;
 `;
 
-const Username = styled.span`
+const UserData = styled.div`
   align-items: center;
 `;
 
@@ -61,7 +61,9 @@ class ReviewEntry extends React.Component {
       <Body className="review-entry-container">
         <User className="user-data">
           <Image id="profile-img" src={this.state.profilePicture} />
-          <Username>{this.state.username}</Username>
+          <UserData>{this.state.username}</UserData>
+          <UserData>{this.state.location}</UserData>
+          <UserData>{this.state.numberOfReviews}</UserData>
         </User>
 
         <div className="each-rating">
