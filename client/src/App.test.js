@@ -1,12 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
-import App from './App.jsx';
 import ReviewEntry from './components/ReviewEntry';
 
 // Test that ReviewList's props has the listOfReviews that we passed
 
-describe('ReviewList with one review', () => {
+describe('Test all states and corresponding DOM renders', () => {
   const review = {
     id: 98,
     overallRating: 4,
@@ -24,13 +22,69 @@ describe('ReviewList with one review', () => {
     profilePicture: 'https://s3.amazonaws.com/uifaces/faces/twitter/danillos/128.jpg',
     vipStatus: 0,
   };
-  it('ReviewEntry should render w/o crashing', () => {
+
+  // ------------------ RENDER TEST -------------------------
+  it('ReviewEntry should render without crashing', () => {
     shallow(<ReviewEntry eachReview={review} />);
   });
 
-  it('ReviewEntry state should match prop passed in', () => {
+  // ------------------ overallRating TEST -------------------------
+  it('overallRating should be properly set to State', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
 
-    // expect(wrapper.find('.review-entry-container')).toBe(4);
+    expect(wrapper.state('overallRating')).toEqual(4);
   });
+
+  it('overallRating should be properly rendered to DOM', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.find('.rating-overall').text()).toEqual('4');
+  });
+
+  // ------------------ foodRating TEST -------------------------
+  it('foodRating should be properly set to State', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.state('foodRating')).toEqual(3);
+  });
+
+  it('foodRating should be properly rendered to DOM', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.find('.rating-food').text()).toEqual('3');
+  });
+
+  // ------------------ serviceRating TEST -------------------------
+  it('serviceRating should be properly set to State', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.state('serviceRating')).toEqual(5);
+  });
+
+  it('serviceRating should be properly rendered to DOM', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.find('.rating-service').text()).toEqual('5');
+  });
+
+  // ------------------ ambienceRating TEST -------------------------
+  it('ambienceRating should be properly set to State', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.state('ambienceRating')).toEqual(1);
+  });
+
+  it('ambienceRating should be properly rendered to DOM', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.find('.rating-ambience').text()).toEqual('1');
+  });
+
+  // ------------------ dateDined TEST -------------------------
+  it('dateDined should be properly set to State', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.state('dateDined')).toEqual('2019-07-28T07:00:00.000Z');
+  });
+  // Come back to test Date later
 });
