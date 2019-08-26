@@ -7,7 +7,7 @@ const Rating = styled.span`
 
 const Body = styled.div`
   display: flex;
-  padding: 30 15% 30 15%;
+  padding: 0 0 0 0;
   max-width: 40%;
   max-height: 40%;
   border-bottom: 1px solid grey;
@@ -35,6 +35,10 @@ class ReviewEntry extends React.Component {
     return (
       <Body className="review-entry-container">
         <div className="each-rating">
+          <Rating className="rating">
+            <img id="imgElem" src={this.state.profilePicture} />
+          </Rating>
+          
           <div>{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
           <b>Overall</b>
           {' '}
@@ -65,10 +69,6 @@ class ReviewEntry extends React.Component {
           {' '}
           <Rating className="rating">
             {this.state.ambienceRating}
-          </Rating>
-
-          <Rating className="rating">
-            <img id="imgElem" src={this.state.profilePicture} />
           </Rating>
         </div>
 
