@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
     username varchar(30) NOT NULL,
     location TEXT NOT NULL,
     numberOfReviews int NOT NULL,
-    profilePicture LONGBLOB,
+    profilePicture VARCHAR(300),
     vipStatus BOOLEAN
 
 );

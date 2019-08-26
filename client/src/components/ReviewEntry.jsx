@@ -7,10 +7,35 @@ const Rating = styled.span`
 
 const Body = styled.div`
   display: flex;
-  padding: 30 15% 30 15%;
-  max-width: 40%;
-  max-height: 40%;
-  border-bottom: 1px solid grey;
+  flex-direction: row;
+  margin: 10 10 10 5;
+  width: 800px;
+  height: 20%;
+  
+  border-bottom: 1px solid #d8d9db;
+`;
+
+const Image = styled.img`
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin: 20 20 20 20;
+`;
+
+const Comment = styled.div`
+  padding: 20 0 0 0;
+`;
+
+const User = styled.div`
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  width: 6rem;
+`;
+
+const Username = styled.span`
+  align-items: center;
 `;
 
 class ReviewEntry extends React.Component {
@@ -23,16 +48,22 @@ class ReviewEntry extends React.Component {
       ambienceRating: this.props.eachReview.ambienceRating,
       dateDined: this.props.eachReview.date_dined,
       comment: this.props.eachReview.comment,
-      profilePicture: null,
+      profilePicture: this.props.eachReview.profilePicture,
       location: this.props.eachReview.location,
       numberOfReviews: this.props.eachReview.numberOfReviews,
       username: this.props.eachReview.username,
     };
   }
 
+
   render() {
     return (
       <Body className="review-entry-container">
+        <User className="user-data">
+          <Image id="profile-img" src={this.state.profilePicture} />
+          <Username>{this.state.username}</Username>
+        </User>
+
         <div className="each-rating">
           <div>{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
           <b>Overall</b>
@@ -65,6 +96,13 @@ class ReviewEntry extends React.Component {
           <Rating className="rating">
             {this.state.ambienceRating}
           </Rating>
+          {' '}
+          {' '}
+          <Comment className="comment">
+            {this.state.comment}
+          </Comment>
+
+
         </div>
 
       </Body>
