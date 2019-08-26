@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import StarRatingComponent from 'react-star-rating-component';
 
 const Rating = styled.span`
   color: red;
@@ -67,11 +68,20 @@ class ReviewEntry extends React.Component {
         </User>
 
         <div className="each-rating">
-          <div className="date-dined">{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
+          <div>
+            <StarRatingComponent
+              name="rate2"
+              editing={false}
+              value={this.state.overallRating}
+              starColor="#DA3743"
+              emptyStarColor="#e8e6e1"
+            />
+          </div>
+          <div>{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
           <b>Overall</b>
           {' '}
           {' '}
-          <Rating className="rating-overall">
+          <Rating className="rating">
             {this.state.overallRating}
           </Rating>
           {' '}
@@ -79,7 +89,7 @@ class ReviewEntry extends React.Component {
           <b>Food</b>
           {' '}
           {' '}
-          <Rating className="rating-food">
+          <Rating className="rating">
             {this.state.foodRating}
           </Rating>
           {' '}
@@ -87,7 +97,7 @@ class ReviewEntry extends React.Component {
           <b>Service</b>
           {' '}
           {' '}
-          <Rating className="rating-service">
+          <Rating className="rating">
             {this.state.serviceRating}
           </Rating>
           {' '}
@@ -95,12 +105,12 @@ class ReviewEntry extends React.Component {
           <b>Ambience</b>
           {' '}
           {' '}
-          <Rating className="rating-ambience">
+          <Rating className="rating">
             {this.state.ambienceRating}
           </Rating>
           {' '}
           {' '}
-          <Comment className="rating-comment">
+          <Comment className="comment">
             {this.state.comment}
           </Comment>
 
