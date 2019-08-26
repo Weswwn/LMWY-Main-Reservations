@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StarRatingComponent from 'react-star-rating-component';
+import PropTypes from 'prop-types';
 
 const Rating = styled.span`
   color: red;
@@ -42,29 +43,46 @@ const UserData = styled.div`
 class ReviewEntry extends React.Component {
   constructor(props) {
     super(props);
+    const { eachReview } = this.props;
+    const {
+      // eslint-disable-next-line camelcase
+      overallRating, foodRating, serviceRating, ambienceRating, date_dined, comment, profilePicture,
+      location, numberOfReviews, username,
+    } = eachReview;
     this.state = {
-      overallRating: this.props.eachReview.overallRating,
-      foodRating: this.props.eachReview.foodRating,
-      serviceRating: this.props.eachReview.serviceRating,
-      ambienceRating: this.props.eachReview.ambienceRating,
-      dateDined: this.props.eachReview.date_dined,
-      comment: this.props.eachReview.comment,
-      profilePicture: this.props.eachReview.profilePicture,
-      location: this.props.eachReview.location,
-      numberOfReviews: this.props.eachReview.numberOfReviews,
-      username: this.props.eachReview.username,
+      overallRating,
+      foodRating,
+      serviceRating,
+      ambienceRating,
+      dateDined: date_dined,
+      comment,
+      profilePicture,
+      location,
+      numberOfReviews,
+      username,
     };
   }
 
-
   render() {
+    const { profilePicture } = this.state;
+    const { username } = this.state;
+    const { location } = this.state;
+    const { numberOfReviews } = this.state;
+    const { overallRating } = this.state;
+    const { dateDined } = this.state;
+    const { foodRating } = this.state;
+    const { serviceRating } = this.state;
+    const { ambienceRating } = this.state;
+    const { comment } = this.state;
+
+
     return (
       <Body className="review-entry-container">
         <User className="user-data">
-          <Image id="profile-img" src={this.state.profilePicture} />
-          <UserData>{this.state.username}</UserData>
-          <UserData>{this.state.location}</UserData>
-          <UserData>{this.state.numberOfReviews}</UserData>
+          <Image id="profile-img" src={profilePicture} />
+          <UserData>{username}</UserData>
+          <UserData>{location}</UserData>
+          <UserData>{numberOfReviews}</UserData>
         </User>
 
         <div className="each-rating">
@@ -72,17 +90,17 @@ class ReviewEntry extends React.Component {
             <StarRatingComponent
               name="rate2"
               editing={false}
-              value={this.state.overallRating}
+              value={overallRating}
               starColor="#DA3743"
               emptyStarColor="#e8e6e1"
             />
           </div>
-          <div>{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
+          <div>{dateDined.substring(0, dateDined.indexOf('T'))}</div>
           <b>Overall</b>
           {' '}
           {' '}
           <Rating className="rating">
-            {this.state.overallRating}
+            {overallRating}
           </Rating>
           {' '}
           {' '}
@@ -90,7 +108,7 @@ class ReviewEntry extends React.Component {
           {' '}
           {' '}
           <Rating className="rating">
-            {this.state.foodRating}
+            {foodRating}
           </Rating>
           {' '}
           {' '}
@@ -98,7 +116,7 @@ class ReviewEntry extends React.Component {
           {' '}
           {' '}
           <Rating className="rating">
-            {this.state.serviceRating}
+            {serviceRating}
           </Rating>
           {' '}
           {' '}
@@ -106,12 +124,12 @@ class ReviewEntry extends React.Component {
           {' '}
           {' '}
           <Rating className="rating">
-            {this.state.ambienceRating}
+            {ambienceRating}
           </Rating>
           {' '}
           {' '}
           <Comment className="comment">
-            {this.state.comment}
+            {comment}
           </Comment>
 
 
@@ -121,5 +139,30 @@ class ReviewEntry extends React.Component {
     );
   }
 }
+ReviewEntry.propTypes = {
+  eachReview: PropTypes.shape({
+    overallRating: PropTypes.number.isRequired,
+    foodRating: PropTypes.number.isRequired,
+    serviceRating: PropTypes.number.isRequired,
+    ambienceRating: PropTypes.number.isRequired,
+    date_dined: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
+    profilePicture: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    numberOfReviews: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
+  }).isRequired,
+  overallRating: PropTypes.number.isRequired,
+  foodRating: PropTypes.number.isRequired,
+  serviceRating: PropTypes.number.isRequired,
+  ambienceRating: PropTypes.number.isRequired,
+  date_dined: PropTypes.string.isRequired,
+  comment: PropTypes.string.isRequired,
+  profilePicture: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  numberOfReviews: PropTypes.number.isRequired,
+  username: PropTypes.string.isRequired,
+};
+
 
 export default ReviewEntry;
