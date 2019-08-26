@@ -23,12 +23,13 @@ class ReviewEntry extends React.Component {
       ambienceRating: this.props.eachReview.ambienceRating,
       dateDined: this.props.eachReview.date_dined,
       comment: this.props.eachReview.comment,
-      profilePicture: null,
+      profilePicture: this.props.eachReview.profilePicture,
       location: this.props.eachReview.location,
       numberOfReviews: this.props.eachReview.numberOfReviews,
       username: this.props.eachReview.username,
     };
   }
+
 
   render() {
     return (
@@ -64,6 +65,10 @@ class ReviewEntry extends React.Component {
           {' '}
           <Rating className="rating">
             {this.state.ambienceRating}
+          </Rating>
+
+          <Rating className="rating">
+            <img id="imgElem" src={this.state.profilePicture} />
           </Rating>
         </div>
 
