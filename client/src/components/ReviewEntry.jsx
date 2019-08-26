@@ -67,7 +67,7 @@ class ReviewEntry extends React.Component {
         </User>
 
         <div className="each-rating">
-          <div>{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
+          <div class="date-dined">{this.state.dateDined.substring(0, this.state.dateDined.indexOf('T'))}</div>
           <b>Overall</b>
           {' '}
           {' '}
