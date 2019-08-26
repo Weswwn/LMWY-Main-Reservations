@@ -95,6 +95,7 @@ class ReviewEntry extends React.Component {
               emptyStarColor="#e8e6e1"
             />
           </div>
+
           <div>{dateDined.substring(0, dateDined.indexOf('T'))}</div>
           <b>Overall</b>
           {' '}
