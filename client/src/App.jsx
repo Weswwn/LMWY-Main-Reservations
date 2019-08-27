@@ -24,9 +24,9 @@ class App extends React.Component {
         const listOfReviews = response.data;
         listOfReviews.sort((a, b) => new Date(b.date_dined) - new Date(a.date_dined));
         // Changed the date format from ISO to MMMM D YYY by utilizing momentJS
-        for (let i = 0; i < listOfReviews.length; i += 1) {
-          listOfReviews[i].date_dined = moment(listOfReviews[i].date_dined).format('MMMM D, YYYY');
-        }
+        // for (let i = 0; i < listOfReviews.length; i += 1) {
+        //   listOfReviews[i].date_dined = moment(listOfReviews[i].date_dined).format('MMMM D, YYYY');
+        // }
         this.setState({
           listOfReviews,
         });

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import StarRatingComponent from 'react-star-rating-component';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 // ------ MAIN BODY STYLE --------
 const Body = styled.div`
@@ -99,12 +100,28 @@ class ReviewEntry extends React.Component {
     const { location } = this.state;
     const { numberOfReviews } = this.state;
     const { overallRating } = this.state;
-    const { dateDined } = this.state;
+    let { dateDined } = this.state;
     const { foodRating } = this.state;
     const { serviceRating } = this.state;
     const { ambienceRating } = this.state;
     const { comment } = this.state;
 
+    let todayDate = moment();
+    todayDate = moment(todayDate).format('YYYY-MM-DD');
+
+    const todayYear = Number(todayDate.slice(0, 4));
+    const todayMonth = Number(todayDate.slice(5, 7));
+    const todayDay = Number(todayDate.slice(8, 10));
+
+
+    dateDined = dateDined.substring(0, dateDined.indexOf('T'));
+    const dinedYear = Number(dateDined.slice(0, 4));
+    const dinedMonth = Number(dateDined.slice(5, 7));
+    const dinedDay = Number(dateDined.slice(8, 10));
+
+    const reviewDate = moment([dinedYear, dinedMonth, dinedDay]);
+    const currentDate = moment([todayYear, todayMonth, todayDay]);
+    const daySinceDining = currentDate.diff(reviewDate, 'days');
 
     return (
       <Body className="review-entry-container">
@@ -131,7 +148,10 @@ class ReviewEntry extends React.Component {
             {' '}
             {'·'}
             {' '}
-            <span>{dateDined}</span>
+            <span>
+              {' '}
+              {daySinceDining < 8 ? `Dined ${daySinceDining} days ago` : `Dined on ${moment(dateDined).format('MMMM D, YYYY')}`}
+            </span>
           </div>
 
           <b>Overall</b>
