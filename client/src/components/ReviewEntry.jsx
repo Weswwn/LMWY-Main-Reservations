@@ -3,47 +3,71 @@ import styled from 'styled-components';
 import StarRatingComponent from 'react-star-rating-component';
 import PropTypes from 'prop-types';
 
+// ------ MAIN BODY STYLE --------
+const Body = styled.div`
+  display: flex;
+  height: 25%;
+  max-width: 50%;
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+  margin: 0 70px 0 80px;
+  overflow: auto;
+  border-bottom: 1px solid #d8d9db;
+`;
+Body.displayName = 'Body';
+
+// ------ REVIEW BOX STYLING ---------
+const ReviewBody = styled.span`
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+`;
+
 const Rating = styled.span`
   color: red;
 `;
 Rating.displayName = 'Rating';
 
-const Body = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 10 10 10 5;
-  width: 800px;
-  height: 20%;
-  border-bottom: 1px solid #d8d9db;
-`;
-Body.displayName = 'Body';
 
 const Image = styled.img`
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  margin: 20 20 20 20;
 `;
 Image.displayName = 'Image';
 
 const Comment = styled.div`
   padding: 20 0 0 0;
+  color: #2d333f;
 `;
 Comment.displayName = 'Comment';
 
-const User = styled.div`
+// ------ USER BOX STYLING ---------
+const UserBody = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin-right: 1rem;
   margin-left: 1rem;
   width: 6rem;
+  font-size: 0.875rem;
+  color: #6f737b;
+  position: relative;
 `;
-User.displayName = 'User';
+UserBody.displayName = 'User';
+
 
 const UserData = styled.div`
-  align-items: center;
+  text-align: center;
 `;
 UserData.displayName = 'UserData';
+
+const UserName = styled(UserData)`
+  color: #2d333f;
+`;
+
+const NumberOfReviews = styled(UserData)`
+  font-size: 12px;
+`;
 
 class ReviewEntry extends React.Component {
   constructor(props) {
@@ -83,14 +107,18 @@ class ReviewEntry extends React.Component {
 
     return (
       <Body className="review-entry-container">
-        <User className="user-data">
+        <UserBody className="user-data">
           <Image id="profile-img" src={profilePicture} />
-          <UserData>{username}</UserData>
+          <UserName>{username}</UserName>
           <UserData>{location}</UserData>
-          <UserData>{numberOfReviews}</UserData>
-        </User>
+          <NumberOfReviews>
+            {numberOfReviews}
+            {' '}
+              reviews
+          </NumberOfReviews>
+        </UserBody>
 
-        <div className="each-rating">
+        <ReviewBody className="each-rating">
           <div>
             <StarRatingComponent
               name="rate2"
@@ -99,9 +127,12 @@ class ReviewEntry extends React.Component {
               starColor="#DA3743"
               emptyStarColor="#e8e6e1"
             />
+            {' '}
+            {'·'}
+            {' '}
+            <span>{dateDined.substring(0, dateDined.indexOf('T'))}</span>
           </div>
 
-          <div>{dateDined.substring(0, dateDined.indexOf('T'))}</div>
           <b>Overall</b>
           {' '}
           {' '}
@@ -139,7 +170,7 @@ class ReviewEntry extends React.Component {
           </Comment>
 
 
-        </div>
+        </ReviewBody>
 
       </Body>
     );
