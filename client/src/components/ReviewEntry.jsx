@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const Rating = styled.span`
   color: red;
 `;
+Rating.displayName = 'Rating';
 
 const Body = styled.div`
   display: flex;
@@ -13,9 +14,9 @@ const Body = styled.div`
   margin: 10 10 10 5;
   width: 800px;
   height: 20%;
-  
   border-bottom: 1px solid #d8d9db;
 `;
+Body.displayName = 'Body';
 
 const Image = styled.img`
   border-radius: 50%;
@@ -23,10 +24,12 @@ const Image = styled.img`
   height: 48px;
   margin: 20 20 20 20;
 `;
+Image.displayName = 'Image';
 
 const Comment = styled.div`
   padding: 20 0 0 0;
 `;
+Comment.displayName = 'Comment';
 
 const User = styled.div`
   flex-direction: column;
@@ -35,10 +38,12 @@ const User = styled.div`
   margin-left: 1rem;
   width: 6rem;
 `;
+User.displayName = 'User';
 
 const UserData = styled.div`
   align-items: center;
 `;
+UserData.displayName = 'UserData';
 
 class ReviewEntry extends React.Component {
   constructor(props) {
