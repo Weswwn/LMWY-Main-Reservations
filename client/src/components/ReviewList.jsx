@@ -23,6 +23,7 @@ class ReviewList extends React.Component {
 
   render() {
     const { currentListOfReviews } = this.state;
+    // Create the pages of reviews here
     // console.log(this.props.listOfReviews);
     // if (currentListOfReviews.length > 40) {
 
