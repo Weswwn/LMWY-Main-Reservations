@@ -5,21 +5,22 @@ import PropTypes from 'prop-types';
 
 // ------ MAIN BODY STYLE --------
 const Body = styled.div`
+  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   height: 25%;
-  max-width: 50%;
+  max-width: 600px;
   width: 100%;
   padding: 1rem 0 1rem 0;
-  margin: 0 70px 0 150px;
-  overflow: auto;
+  margin: 0 70px 0 200px;
   border-bottom: 1px solid #d8d9db;
 `;
 Body.displayName = 'Body';
 
 // ------ REVIEW BOX STYLING ---------
 const ReviewBody = styled.span`
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
+  overflow: auto;
+  width: 480px;
 `;
 
 const Rating = styled.span`
@@ -36,12 +37,12 @@ const Image = styled.img`
 Image.displayName = 'Image';
 
 const Comment = styled.div`
-  padding: 20 0 0 0;
+  margin: 20 0 0 0;
   color: #2d333f;
 `;
 Comment.displayName = 'Comment';
 
-// ------ USER BOX STYLING ---------
+// ------ USERBODY BOX STYLING ---------
 const UserBody = styled.div`
   display: flex;
   flex-direction: column;
@@ -140,6 +141,7 @@ class ReviewEntry extends React.Component {
             {overallRating}
           </Rating>
           {' '}
+          {'·'}
           {' '}
           <b>Food</b>
           {' '}
@@ -148,6 +150,7 @@ class ReviewEntry extends React.Component {
             {foodRating}
           </Rating>
           {' '}
+          {'·'}
           {' '}
           <b>Service</b>
           {' '}
@@ -156,6 +159,7 @@ class ReviewEntry extends React.Component {
             {serviceRating}
           </Rating>
           {' '}
+          {'·'}
           {' '}
           <b>Ambience</b>
           {' '}
