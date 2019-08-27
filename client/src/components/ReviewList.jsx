@@ -24,9 +24,9 @@ class ReviewList extends React.Component {
   render() {
     const { currentListOfReviews } = this.state;
     // console.log(this.props.listOfReviews);
-    if (currentListOfReviews.length > 40) {
-      
-    }
+    // if (currentListOfReviews.length > 40) {
+
+    // }
     return (
       <div key="review-list">
         {currentListOfReviews.map((eachReview) => <ReviewEntry eachReview={eachReview} />)}

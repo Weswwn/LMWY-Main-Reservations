@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import ReviewList from './components/ReviewList.jsx';
 
 class App extends React.Component {
@@ -20,9 +21,11 @@ class App extends React.Component {
       },
     })
       .then((response) => {
-        console.log(response.data);
         const listOfReviews = response.data;
         listOfReviews.sort((a, b) => new Date(b.date_dined) - new Date(a.date_dined));
+        for (let i = 0; i < listOfReviews.length; i += 1) {
+          listOfReviews[i].date_dined = moment(listOfReviews[i].date_dined).format('MMMM D, YYYY');
+        }
         this.setState({
           listOfReviews,
         });
