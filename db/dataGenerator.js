@@ -49,7 +49,8 @@ const populateUserTable = () => {
   const queryString = 'INSERT INTO users(username, location, numberOfReviews, profilePicture, vipStatus) VALUES(?, ?, ?, ?, ?)';
   for (let i = 0; i < userArray.length; i++) {
     db.connection.query(queryString,
-      [userArray[i].username, userArray[i].location, userArray[i].numberOfReviews, userArray[i].profilePicture, userArray[i].vipStatus],
+      [userArray[i].username, userArray[i].location, userArray[i].numberOfReviews,
+        userArray[i].profilePicture, userArray[i].vipStatus],
       (error, results) => {
         if (error) {
           console.log(error);
@@ -68,14 +69,16 @@ const populateReviewsTable = (array) => {
   for (let a = 0; a < array.length; a++) {
     const queryString = 'INSERT INTO reviews(overallRating, foodRating, serviceRating, ambienceRating, comment, date_dined, r_id, u_id) VALUES (?,?,?,?,?,?,?, (SELECT user_id from users WHERE user_id = ?))';
     for (let b = 0; b < array[a].length; b++) {
-      db.connection.query(queryString, [array[a][b].overallRating, array[a][b].foodRating, array[a][b].serviceRating, array[a][b].ambienceRating, array[a][b].comment, array[a][b].date_dined, array[a][b].r_id, array[a][b].u_id],
-        (error, results) => {
-          if (error) {
-            console.log(error);
-          } else {
-            console.log(results);
-          }
-        });
+      db.connection.query(queryString, [array[a][b].overallRating, array[a][b].foodRating,
+        array[a][b].serviceRating, array[a][b].ambienceRating, array[a][b].comment,
+        array[a][b].date_dined, array[a][b].r_id, array[a][b].u_id],
+      (error, results) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(results);
+        }
+      });
     }
   }
 };

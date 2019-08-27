@@ -100,7 +100,7 @@ class ReviewEntry extends React.Component {
           <b>Overall</b>
           {' '}
           {' '}
-          <Rating className="rating">
+          <Rating className="rating-overall">
             {overallRating}
           </Rating>
           {' '}
@@ -108,7 +108,7 @@ class ReviewEntry extends React.Component {
           <b>Food</b>
           {' '}
           {' '}
-          <Rating className="rating">
+          <Rating className="rating-food">
             {foodRating}
           </Rating>
           {' '}
@@ -116,7 +116,7 @@ class ReviewEntry extends React.Component {
           <b>Service</b>
           {' '}
           {' '}
-          <Rating className="rating">
+          <Rating className="rating-service">
             {serviceRating}
           </Rating>
           {' '}
@@ -124,7 +124,7 @@ class ReviewEntry extends React.Component {
           <b>Ambience</b>
           {' '}
           {' '}
-          <Rating className="rating">
+          <Rating className="rating-ambience">
             {ambienceRating}
           </Rating>
           {' '}
