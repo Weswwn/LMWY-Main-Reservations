@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1566863226945" clover="3.2.0">
+  <project timestamp="1566863226945" name="All files">
+    <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="24" coveredelements="24" complexity="0" loc="22" ncloc="22" packages="1" files="1" classes="1"/>
+    <file name="ReviewEntry.jsx" path="/Users/Admin/Documents/HRSF122/fec-project/client/src/components/ReviewEntry.jsx">
+      <metrics statements="22" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="45" count="10" type="stmt"/>
+      <line num="46" count="10" type="stmt"/>
+      <line num="51" count="10" type="stmt"/>
+      <line num="52" count="10" type="stmt"/>
+      <line num="67" count="10" type="stmt"/>
+      <line num="68" count="10" type="stmt"/>
+      <line num="69" count="10" type="stmt"/>
+      <line num="70" count="10" type="stmt"/>
+      <line num="71" count="10" type="stmt"/>
+      <line num="72" count="10" type="stmt"/>
+      <line num="73" count="10" type="stmt"/>
+      <line num="74" count="10" type="stmt"/>
+      <line num="75" count="10" type="stmt"/>
+      <line num="76" count="10" type="stmt"/>
+      <line num="79" count="10" type="stmt"/>
+      <line num="143" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

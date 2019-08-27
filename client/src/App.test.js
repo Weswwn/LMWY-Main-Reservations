@@ -87,4 +87,30 @@ describe('Test all states and corresponding DOM renders', () => {
     expect(wrapper.state('dateDined')).toEqual('2019-07-28T07:00:00.000Z');
   });
   // Come back to test Date later
+
+  // ------------------ comment TEST -------------------------
+  it('ambienceRating should be properly set to State', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.state('comment')).toEqual('In quisquam suscipit nisi quis. Delectus delectus sed facilis quos. Facilis qui vel dolores. Animi pariatur eos.');
+  });
+
+  it('ambienceRating should be properly rendered to DOM', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.find('.comment').text()).toEqual('In quisquam suscipit nisi quis. Delectus delectus sed facilis quos. Facilis qui vel dolores. Animi pariatur eos.');
+  });
+
+  // ------------------ profilePicture TEST -------------------------
+  it('profile-img should be properly set to State', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.state('profilePicture')).toEqual('https://s3.amazonaws.com/uifaces/faces/twitter/danillos/128.jpg');
+  });
+
+  it('profile-img should be properly rendered to DOM', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.find('#profile-img').prop('src')).toEqual('https://s3.amazonaws.com/uifaces/faces/twitter/danillos/128.jpg');
+  });
 });
