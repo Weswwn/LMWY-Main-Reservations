@@ -131,7 +131,7 @@ class ReviewEntry extends React.Component {
             {' '}
             {'·'}
             {' '}
-            <span>{dateDined.substring(0, dateDined.indexOf('T'))}</span>
+            <span>{dateDined}</span>
           </div>
 
           <b>Overall</b>
