@@ -64,6 +64,7 @@ const CommentButton = styled.button`
     outline:0;
   }
 `;
+CommentButton.displayName = 'CommentButton';
 
 const ReviewDate = styled.span`
   height: 2rem;

@@ -11,7 +11,7 @@
   "scripts": {
     "build": "npx webpack --mode production --watch",
     "start": "nodemon ./server/Server.js",
-    "test": "jest",
+    "test": "jest --coverage",
     "seed": "node ./db/dataGenerator.js"
   },
   "dependencies": {
