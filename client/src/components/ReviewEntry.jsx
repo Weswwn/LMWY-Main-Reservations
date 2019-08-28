@@ -71,15 +71,20 @@ UserBody.displayName = 'UserBody';
 
 const UserData = styled.div`
   text-align: center;
+  margin-top: 0.5rem;
 `;
 UserData.displayName = 'UserData';
 
-const UserName = styled(UserData)`
+const UserName = styled.div`
   color: #2d333f;
+  text-align: center;
+  margin-top: 0.5rem;
 `;
 
-const NumberOfReviews = styled(UserData)`
+const NumberOfReviews = styled.div`
   font-size: 12px;
+  text-align: center;
+  margin-top: 0.5rem;
 `;
 
 class ReviewEntry extends React.Component {

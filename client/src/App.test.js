@@ -113,4 +113,7 @@ describe('Test all states and corresponding DOM renders', () => {
 
     expect(wrapper.find('#profile-img').prop('src')).toEqual('https://s3.amazonaws.com/uifaces/faces/twitter/danillos/128.jpg');
   });
+
+  // ------------------ profilePicture TEST -------------------------
+  it('Should render the conditional that is greater than 8 days');
 });
