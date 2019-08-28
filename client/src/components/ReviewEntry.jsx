@@ -167,7 +167,7 @@ class ReviewEntry extends React.Component {
               {'·'}
               {' '}
               {' '}
-              {daySinceDining < 8 ? `Dined ${daySinceDining} days ago` : `Dined on ${moment(dateDined).format('MMMM D, YYYY')}`}
+              {daySinceDining < 8 ? `Dined ${daySinceDining} day(s) ago` : `Dined on ${moment(dateDined).format('MMMM D, YYYY')}`}
             </ReviewDate>
           </div>
 

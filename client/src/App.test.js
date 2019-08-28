@@ -114,6 +114,36 @@ describe('Test all states and corresponding DOM renders', () => {
     expect(wrapper.find('#profile-img').prop('src')).toEqual('https://s3.amazonaws.com/uifaces/faces/twitter/danillos/128.jpg');
   });
 
-  // ------------------ profilePicture TEST -------------------------
-  it('Should render the conditional that is greater than 8 days');
+  // ------------------ CONDITIONAL DATE RENDER TEST -------------------------
+  it('Should render the conditional that is greater than 8 days', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.find('ReviewDate').text()).toEqual(' ·  Dined on July 28, 2019');
+  });
+});
+
+describe('Test all states and corresponding DOM renders', () => {
+  const review = {
+    id: 98,
+    overallRating: 4,
+    foodRating: 3,
+    serviceRating: 5,
+    ambienceRating: 1,
+    comment: 'In quisquam suscipit nisi quis. Delectus delectus sed facilis quos. Facilis qui vel dolores. Animi pariatur eos.',
+    r_id: 'r2',
+    u_id: 1,
+    date_dined: '2019-08-26T07:00:00.000Z',
+    user_id: 1,
+    username: 'Neha Walsh',
+    location: 'Crooksville',
+    numberOfReviews: 66,
+    profilePicture: 'https://s3.amazonaws.com/uifaces/faces/twitter/danillos/128.jpg',
+    vipStatus: 0,
+  };
+  // ------------------ DATE RENDER TEST -------------------------
+  it('Should render the conditional for when the reviewer ate more than 8 days ago ', () => {
+    const wrapper = shallow(<ReviewEntry eachReview={review} />);
+
+    expect(wrapper.find('ReviewDate').text()).toEqual(' ·  Dined 1 day(s) ago');
+  });
 });
