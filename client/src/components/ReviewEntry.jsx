@@ -54,6 +54,7 @@ const CommentButton = styled.button`
   font-size: 1em;
   display: block;
   color: #DA3743; 
+  margin: 8px 0 0 0;
   :hover {
     text-decoration: underline;
     cursor: pointer;
@@ -159,11 +160,11 @@ class ReviewEntry extends React.Component {
     const currentDate = moment([todayYear, todayMonth, todayDay]);
     const daySinceDining = currentDate.diff(reviewDate, 'days');
 
-    let firstHalf = null;
-    let secondHalf = null;
+    let commentFirstHalf = null;
+    let commentSecondHalf = null;
     if (comment.length > 300) {
-      firstHalf = comment.slice(0, 301);
-      secondHalf = comment.slice(301, comment.length);
+      commentFirstHalf = comment.slice(0, 301);
+      commentSecondHalf = comment.slice(301, comment.length);
     }
 
     return (
@@ -237,7 +238,7 @@ class ReviewEntry extends React.Component {
           <Comment className="comment">
             {comment.length > 300 ? (
               <div>
-                {`${firstHalf}...`}
+                {`${commentFirstHalf}...`}
                 <div>
                   <CommentButton onClick={(e) => this.handleShowMore(e)} type="button">+ Read More</CommentButton>
                 </div>
