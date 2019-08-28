@@ -178,10 +178,12 @@ describe('Test all states and corresponding DOM renders', () => {
     readMe: false,
   };
   // ------------------ READ MORE BUTTON TEST -------------------------
-  it('Test that state changes when "Read ME" button is pressed', () => {
+  it('Test that the "readMe" state bangs when "Read ME" button is pressed', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
-    wrapper.find('CommentButton').simulate('click', { preventDefault() {} });
+    expect(wrapper.find('CommentButton').text()).toEqual('+ Read More');
+    expect(wrapper.state('readMe')).toEqual(false);
 
+    wrapper.find('CommentButton').simulate('click', { preventDefault() {} });
     expect(wrapper.state('readMe')).toEqual(true);
     expect(wrapper.find('CommentButton').text()).toEqual('- Read Less');
     expect(wrapper.find('Comment').text()).toEqual('Maxime velit recusandae dolores incidunt consequatur. Facilis aspernatur dolor voluptas nemo qui aperiam nostrum. Delectus ut laboriosam unde quos et est voluptatem placeat qui. Natus repudiandae expedita ducimus molestias temporibus excepturi est quo. Expedita ut aliquid nihil doloribus et. Sit vel ex est recusandae rerum autem.- Read Less');

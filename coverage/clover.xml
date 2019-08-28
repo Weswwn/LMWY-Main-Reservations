@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1567033208841" clover="3.2.0">
-  <project timestamp="1567033208841" name="All files">
+<coverage generated="1567033835839" clover="3.2.0">
+  <project timestamp="1567033835839" name="All files">
     <metrics statements="61" coveredstatements="60" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="5" elements="77" coveredelements="75" complexity="0" loc="61" ncloc="61" packages="1" files="1" classes="1"/>
     <file name="ReviewEntry.jsx" path="/Users/Admin/Documents/HRSF122/fec-project/client/src/components/ReviewEntry.jsx">
       <metrics statements="61" coveredstatements="60" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="5"/>
