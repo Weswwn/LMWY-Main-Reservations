@@ -59,6 +59,9 @@ const CommentButton = styled.button`
     text-decoration: underline;
     cursor: pointer;
   }
+  :focus {
+    outline:0;
+  }
 `;
 
 const ReviewDate = styled.span`
