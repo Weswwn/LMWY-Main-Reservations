@@ -31,7 +31,8 @@ const RatingData = styled.div`
 RatingData.displayName = 'RatingData';
 
 const Rating = styled.span`
-  color: red;
+  font-weight: bold;
+  color: #DA3743;
 `;
 Rating.displayName = 'Rating';
 
@@ -47,6 +48,13 @@ const Comment = styled.div`
   color: #2d333f;
 `;
 Comment.displayName = 'Comment';
+
+const CommentButton = styled.button`
+  border: none;
+  font-size: 1em;
+  display: block;
+  color: #DA3743; 
+`;
 
 const ReviewDate = styled.span`
   height: 2rem;
@@ -152,7 +160,6 @@ class ReviewEntry extends React.Component {
     if (comment.length > 300) {
       firstHalf = comment.slice(0, 301);
       secondHalf = comment.slice(301, comment.length);
-      console.log('first:', firstHalf, 'second:', secondHalf);
     }
 
     return (
@@ -228,7 +235,7 @@ class ReviewEntry extends React.Component {
               <div>
                 {`${firstHalf}...`}
                 <div>
-                  <button onClick={(e) => this.handleShowMore(e)} type="button">+ Read More</button>
+                  <CommentButton onClick={(e) => this.handleShowMore(e)} type="button">+ Read More</CommentButton>
                 </div>
               </div>
             ) : comment}
