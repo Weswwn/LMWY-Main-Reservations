@@ -8,19 +8,19 @@ import moment from 'moment';
 const Body = styled.div`
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
-  height: 25%;
+  height: 30%;
   max-width: 600px;
   width: 100%;
   padding: 1rem 0 1rem 0;
   margin: 0 70px 0 200px;
   border-bottom: 1px solid #d8d9db;
+  height: auto;
 `;
 Body.displayName = 'Body';
 
 // ------ REVIEW BOX STYLING ---------
 const ReviewBody = styled.span`
   font-size: 14px;
-  overflow: auto;
   width: 480px;
 `;
 ReviewBody.displayName = 'ReviewBody';
@@ -55,9 +55,13 @@ const CommentButton = styled.button`
   display: block;
   color: #DA3743; 
   margin: 8px 0 0 0;
+  padding: 0 0 0 0;
   :hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+  :focus {
+    outline:0;
   }
 `;
 
@@ -128,6 +132,9 @@ class ReviewEntry extends React.Component {
   handleShowMore(e) {
     e.preventDefault();
     console.log('hi');
+    this.setState((prevState) => ({
+      readMe: !prevState.readMe,
+    }));
   }
 
   render() {
@@ -141,24 +148,26 @@ class ReviewEntry extends React.Component {
     const { serviceRating } = this.state;
     const { ambienceRating } = this.state;
     const { comment } = this.state;
+    const { readMe } = this.state;
 
-    let todayDate = moment();
-    todayDate = moment(todayDate).format('YYYY-MM-DD');
-
-    const todayYear = Number(todayDate.slice(0, 4));
-    const todayMonth = Number(todayDate.slice(5, 7));
-    const todayDay = Number(todayDate.slice(8, 10));
+    const todayDate = moment();
+    const todayYear = todayDate.format('YYYY');
+    const todayMonth = todayDate.format('MM');
+    const todayDay = todayDate.format('DD');
 
 
-    dateDined = dateDined.substring(0, dateDined.indexOf('T'));
+    dateDined = moment(dateDined);
+    const dinedYear = dateDined.format('YYYY');
+    const dinedMonth = dateDined.format('MM');
+    const dinedDay = dateDined.format('DD');
 
-    const dinedYear = Number(dateDined.slice(0, 4));
-    const dinedMonth = Number(dateDined.slice(5, 7));
-    const dinedDay = Number(dateDined.slice(8, 10));
 
-    const reviewDate = moment([dinedYear, dinedMonth, dinedDay]);
-    const currentDate = moment([todayYear, todayMonth, todayDay]);
+    const reviewDate = moment(`${dinedYear}-${dinedMonth}-${dinedDay}`);
+    const currentDate = moment(`${todayYear}-${todayMonth}-${todayDay}`);
+
+
     const daySinceDining = currentDate.diff(reviewDate, 'days');
+    // console.log(daySinceDining);
 
     let commentFirstHalf = null;
     let commentSecondHalf = null;
@@ -194,7 +203,7 @@ class ReviewEntry extends React.Component {
               {'·'}
               {' '}
               {' '}
-              {daySinceDining < 8 ? `Dined ${daySinceDining} day(s) ago` : `Dined on ${moment(dateDined).format('MMMM D, YYYY')}`}
+              {daySinceDining > 8 ? `Dined on ${moment(dateDined).format('MMMM D, YYYY')}` : `Dined ${daySinceDining} days ago`}
             </ReviewDate>
           </div>
 
@@ -236,14 +245,17 @@ class ReviewEntry extends React.Component {
           {' '}
           {' '}
           <Comment className="comment">
-            {comment.length > 300 ? (
-              <div>
-                {`${commentFirstHalf}...`}
+            {comment.length > 300
+              ? (
                 <div>
-                  <CommentButton onClick={(e) => this.handleShowMore(e)} type="button">+ Read More</CommentButton>
+                  {readMe === true ? commentFirstHalf + commentSecondHalf : `${commentFirstHalf}...`}
+                  <div>
+                    {readMe === true ? <CommentButton onClick={(e) => this.handleShowMore(e)} type="button">- Read Less</CommentButton>
+                      : <CommentButton onClick={(e) => this.handleShowMore(e)} type="button">+ Read More</CommentButton>}
+                  </div>
                 </div>
-              </div>
-            ) : comment}
+              )
+              : comment}
           </Comment>
         </ReviewBody>
 
