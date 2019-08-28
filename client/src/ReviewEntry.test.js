@@ -89,13 +89,13 @@ describe('Test all states and corresponding DOM renders', () => {
   // Come back to test Date later
 
   // ------------------ comment TEST -------------------------
-  it('ambienceRating should be properly set to State', () => {
+  it('comment should be properly set to State', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
 
     expect(wrapper.state('comment')).toEqual('In quisquam suscipit nisi quis. Delectus delectus sed facilis quos. Facilis qui vel dolores. Animi pariatur eos.');
   });
 
-  it('ambienceRating should be properly rendered to DOM', () => {
+  it('comment should be properly rendered to DOM', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
 
     expect(wrapper.find('.comment').text()).toEqual('In quisquam suscipit nisi quis. Delectus delectus sed facilis quos. Facilis qui vel dolores. Animi pariatur eos.');
