@@ -31,7 +31,8 @@ const RatingData = styled.div`
 RatingData.displayName = 'RatingData';
 
 const Rating = styled.span`
-  color: red;
+  color: #DA3743;
+  font-weight: bold;
 `;
 Rating.displayName = 'Rating';
 
