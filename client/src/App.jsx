@@ -21,6 +21,7 @@ class App extends React.Component {
       },
     })
       .then((response) => {
+        console.log(response.data);
         const listOfReviews = response.data;
         listOfReviews.sort((a, b) => new Date(b.date_dined) - new Date(a.date_dined));
         this.setState({

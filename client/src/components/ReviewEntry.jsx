@@ -23,12 +23,17 @@ const ReviewBody = styled.span`
   overflow: auto;
   width: 480px;
 `;
+ReviewBody.displayName = 'ReviewBody';
+
+const RatingData = styled.div`
+  margin: 10px 0 0 0;
+`;
+RatingData.displayName = 'RatingData';
 
 const Rating = styled.span`
   color: red;
 `;
 Rating.displayName = 'Rating';
-
 
 const Image = styled.img`
   border-radius: 50%;
@@ -38,10 +43,16 @@ const Image = styled.img`
 Image.displayName = 'Image';
 
 const Comment = styled.div`
-  margin: 20 0 0 0;
+  margin: 13px 0 0 0;
   color: #2d333f;
 `;
 Comment.displayName = 'Comment';
+
+const ReviewDate = styled.span`
+  height: 2rem;
+  margin: 0 0 40px 0;
+`;
+ReviewDate.displayName = 'ReviewDate';
 
 // ------ USERBODY BOX STYLING ---------
 const UserBody = styled.div`
@@ -115,6 +126,7 @@ class ReviewEntry extends React.Component {
 
 
     dateDined = dateDined.substring(0, dateDined.indexOf('T'));
+
     const dinedYear = Number(dateDined.slice(0, 4));
     const dinedMonth = Number(dateDined.slice(5, 7));
     const dinedDay = Number(dateDined.slice(8, 10));
@@ -145,55 +157,55 @@ class ReviewEntry extends React.Component {
               starColor="#DA3743"
               emptyStarColor="#e8e6e1"
             />
+            <ReviewDate>
+              {' '}
+              {'·'}
+              {' '}
+              {' '}
+              {daySinceDining < 8 ? `Dined ${daySinceDining} days ago` : `Dined on ${moment(dateDined).format('MMMM D, YYYY')}`}
+            </ReviewDate>
+          </div>
+
+          <RatingData>
+            <b>Overall</b>
+            {' '}
+            {' '}
+            <Rating className="rating-overall">
+              {overallRating}
+            </Rating>
             {' '}
             {'·'}
             {' '}
-            <span>
-              {' '}
-              {daySinceDining < 8 ? `Dined ${daySinceDining} days ago` : `Dined on ${moment(dateDined).format('MMMM D, YYYY')}`}
-            </span>
-          </div>
-
-          <b>Overall</b>
-          {' '}
-          {' '}
-          <Rating className="rating-overall">
-            {overallRating}
-          </Rating>
-          {' '}
-          {'·'}
-          {' '}
-          <b>Food</b>
-          {' '}
-          {' '}
-          <Rating className="rating-food">
-            {foodRating}
-          </Rating>
-          {' '}
-          {'·'}
-          {' '}
-          <b>Service</b>
-          {' '}
-          {' '}
-          <Rating className="rating-service">
-            {serviceRating}
-          </Rating>
-          {' '}
-          {'·'}
-          {' '}
-          <b>Ambience</b>
-          {' '}
-          {' '}
-          <Rating className="rating-ambience">
-            {ambienceRating}
-          </Rating>
+            <b>Food</b>
+            {' '}
+            {' '}
+            <Rating className="rating-food">
+              {foodRating}
+            </Rating>
+            {' '}
+            {'·'}
+            {' '}
+            <b>Service</b>
+            {' '}
+            {' '}
+            <Rating className="rating-service">
+              {serviceRating}
+            </Rating>
+            {' '}
+            {'·'}
+            {' '}
+            <b>Ambience</b>
+            {' '}
+            {' '}
+            <Rating className="rating-ambience">
+              {ambienceRating}
+            </Rating>
+          </RatingData>
           {' '}
           {' '}
           <Comment className="comment">
             {comment}
           </Comment>
-
-
         </ReviewBody>
 
       </Body>
