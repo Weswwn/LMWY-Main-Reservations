@@ -66,7 +66,7 @@ const UserBody = styled.div`
   color: #6f737b;
   position: relative;
 `;
-UserBody.displayName = 'User';
+UserBody.displayName = 'UserBody';
 
 
 const UserData = styled.div`
