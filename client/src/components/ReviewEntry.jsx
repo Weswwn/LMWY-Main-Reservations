@@ -55,6 +55,7 @@ const CommentButton = styled.button`
   display: block;
   color: #DA3743; 
   margin: 8px 0 0 0;
+  padding: 0 0 0 0;
   :hover {
     text-decoration: underline;
     cursor: pointer;
@@ -131,6 +132,9 @@ class ReviewEntry extends React.Component {
   handleShowMore(e) {
     e.preventDefault();
     console.log('hi');
+    this.setState({
+
+    });
   }
 
   render() {
@@ -144,6 +148,7 @@ class ReviewEntry extends React.Component {
     const { serviceRating } = this.state;
     const { ambienceRating } = this.state;
     const { comment } = this.state;
+    const { readMe } = this.state;
 
     let todayDate = moment();
     todayDate = moment(todayDate).format('YYYY-MM-DD');
@@ -243,6 +248,7 @@ class ReviewEntry extends React.Component {
               <div>
                 {`${commentFirstHalf}...`}
                 <div>
+                  {readMe === true ? commentSecondHalf : null}
                   <CommentButton onClick={(e) => this.handleShowMore(e)} type="button">+ Read More</CommentButton>
                 </div>
               </div>
