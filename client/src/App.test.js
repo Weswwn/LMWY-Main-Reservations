@@ -144,6 +144,6 @@ describe('Test all states and corresponding DOM renders', () => {
   it('Should render the conditional for when the reviewer ate less than 8 days ago ', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
 
-    expect(wrapper.find('ReviewDate').text()).toEqual(' ·  Dined 2 day(s) ago');
+    expect(wrapper.find('ReviewDate').text()).toEqual(' ·  Dined 2 days ago');
   });
 });
