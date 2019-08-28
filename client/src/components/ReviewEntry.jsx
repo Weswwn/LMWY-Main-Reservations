@@ -54,6 +54,10 @@ const CommentButton = styled.button`
   font-size: 1em;
   display: block;
   color: #DA3743; 
+  :hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 
 const ReviewDate = styled.span`
