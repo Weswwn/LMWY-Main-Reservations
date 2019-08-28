@@ -140,8 +140,8 @@ describe('Test all states and corresponding DOM renders', () => {
     profilePicture: 'https://s3.amazonaws.com/uifaces/faces/twitter/danillos/128.jpg',
     vipStatus: 0,
   };
-  // ------------------ CONDITIONAL DATE RENDER TEST -------------------------
-  it('Should render the conditional that is greater than 8 days', () => {
+  // ------------------ DATE RENDER TEST -------------------------
+  it('Should render the conditional for when the reviewer ate more than 8 days ago ', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
 
     expect(wrapper.find('ReviewDate').text()).toEqual(' ·  Dined 1 day(s) ago');
