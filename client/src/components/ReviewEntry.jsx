@@ -49,6 +49,18 @@ const Comment = styled.div`
 `;
 Comment.displayName = 'Comment';
 
+const CommentButton = styled.button`
+  border: none;
+  font-size: 1em;
+  display: block;
+  color: #DA3743; 
+  margin: 8px 0 0 0;
+  :hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`;
+
 const ReviewDate = styled.span`
   height: 2rem;
   margin: 0 0 40px 0;
@@ -108,7 +120,14 @@ class ReviewEntry extends React.Component {
       location,
       numberOfReviews,
       username,
+      readMe: false,
     };
+    this.handleShowMore = this.handleShowMore.bind(this);
+  }
+
+  handleShowMore(e) {
+    e.preventDefault();
+    console.log('hi');
   }
 
   render() {
@@ -140,6 +159,13 @@ class ReviewEntry extends React.Component {
     const reviewDate = moment([dinedYear, dinedMonth, dinedDay]);
     const currentDate = moment([todayYear, todayMonth, todayDay]);
     const daySinceDining = currentDate.diff(reviewDate, 'days');
+
+    let commentFirstHalf = null;
+    let commentSecondHalf = null;
+    if (comment.length > 300) {
+      commentFirstHalf = comment.slice(0, 301);
+      commentSecondHalf = comment.slice(301, comment.length);
+    }
 
     return (
       <Body className="review-entry-container">
@@ -210,7 +236,14 @@ class ReviewEntry extends React.Component {
           {' '}
           {' '}
           <Comment className="comment">
-            {comment}
+            {comment.length > 300 ? (
+              <div>
+                {`${commentFirstHalf}...`}
+                <div>
+                  <CommentButton onClick={(e) => this.handleShowMore(e)} type="button">+ Read More</CommentButton>
+                </div>
+              </div>
+            ) : comment}
           </Comment>
         </ReviewBody>
 
