@@ -107,7 +107,14 @@ class ReviewEntry extends React.Component {
       location,
       numberOfReviews,
       username,
+      readMe: false,
     };
+    this.handleShowMore = this.handleShowMore.bind(this);
+  }
+
+  handleShowMore(e) {
+    e.preventDefault();
+    console.log('hi');
   }
 
   render() {
@@ -139,6 +146,14 @@ class ReviewEntry extends React.Component {
     const reviewDate = moment([dinedYear, dinedMonth, dinedDay]);
     const currentDate = moment([todayYear, todayMonth, todayDay]);
     const daySinceDining = currentDate.diff(reviewDate, 'days');
+
+    let firstHalf = null;
+    let secondHalf = null;
+    if (comment.length > 300) {
+      firstHalf = comment.slice(0, 301);
+      secondHalf = comment.slice(301, comment.length);
+      console.log('first:', firstHalf, 'second:', secondHalf);
+    }
 
     return (
       <Body className="review-entry-container">
@@ -209,7 +224,14 @@ class ReviewEntry extends React.Component {
           {' '}
           {' '}
           <Comment className="comment">
-            {comment}
+            {comment.length > 300 ? (
+              <div>
+                {`${firstHalf}...`}
+                <div>
+                  <button onClick={(e) => this.handleShowMore(e)} type="button">+ Read More</button>
+                </div>
+              </div>
+            ) : comment}
           </Comment>
         </ReviewBody>
 
