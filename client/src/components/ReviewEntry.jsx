@@ -139,17 +139,12 @@ class ReviewEntry extends React.Component {
   }
 
   render() {
-    const { profilePicture } = this.state;
-    const { username } = this.state;
-    const { location } = this.state;
-    const { numberOfReviews } = this.state;
-    const { overallRating } = this.state;
+    const {
+      profilePicture, username, location, numberOfReviews, overallRating, foodRating, serviceRating,
+      ambienceRating, comment, readMe,
+    } = this.state;
     let { dateDined } = this.state;
-    const { foodRating } = this.state;
-    const { serviceRating } = this.state;
-    const { ambienceRating } = this.state;
-    const { comment } = this.state;
-    const { readMe } = this.state;
+
 
     const todayDate = moment();
     const todayYear = todayDate.format('YYYY');
@@ -277,16 +272,6 @@ ReviewEntry.propTypes = {
     numberOfReviews: PropTypes.number.isRequired,
     username: PropTypes.string.isRequired,
   }).isRequired,
-  overallRating: PropTypes.number.isRequired,
-  foodRating: PropTypes.number.isRequired,
-  serviceRating: PropTypes.number.isRequired,
-  ambienceRating: PropTypes.number.isRequired,
-  date_dined: PropTypes.string.isRequired,
-  comment: PropTypes.string.isRequired,
-  profilePicture: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  numberOfReviews: PropTypes.number.isRequired,
-  username: PropTypes.string.isRequired,
 };
 
 
