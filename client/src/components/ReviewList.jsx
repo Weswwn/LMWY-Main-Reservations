@@ -25,7 +25,8 @@ class ReviewList extends React.Component {
     }
   }
 
-  changePage(indexClicked) {
+  changePage(indexClicked, e) {
+    e.preventDefault();
     console.log(indexClicked);
     this.setState({
       pageIndex: indexClicked,
@@ -54,12 +55,14 @@ class ReviewList extends React.Component {
     }
 
     const { pageIndex } = this.state;
+    console.log(currentListOfReviews);
     return (
       <div key={`${pageIndex}Review`}>
         {reviewBatchArray.length !== 0
           ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
           : null}
-        <ButtonList changePage={this.changePage} numberOfPages={reviewBatchArray.length} />
+        {currentListOfReviews.length !== 0
+          ? <ButtonList changePage={this.changePage} numberOfPages={reviewBatchArray.length} /> : null}
       </div>
     );
   }
