@@ -3,9 +3,10 @@ import PageButton from './PageButton.jsx';
 
 const ButtonList = (props) => {
   const { numberOfPages } = props;
+  const { changePage } = props;
   const listOfButtons = [];
-  for (let i = 1; i < numberOfPages + 1; i++) {
-    listOfButtons.push(<span><PageButton index={i} /></span>);
+  for (let i = 0; i < numberOfPages; i++) {
+    listOfButtons.push(<span><PageButton changePage={changePage} index={i} /></span>);
   }
   return listOfButtons;
 };

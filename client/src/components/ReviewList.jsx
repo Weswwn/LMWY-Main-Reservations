@@ -11,6 +11,7 @@ class ReviewList extends React.Component {
       currentListOfReviews: listOfReviews,
       pageIndex: 0,
     };
+    this.changePage = this.changePage.bind(this);
   }
 
 
@@ -22,6 +23,13 @@ class ReviewList extends React.Component {
         currentListOfReviews: listOfReviews,
       });
     }
+  }
+
+  changePage(indexClicked) {
+    console.log(indexClicked);
+    this.setState({
+      pageIndex: indexClicked,
+    });
   }
 
 
@@ -42,14 +50,14 @@ class ReviewList extends React.Component {
         }
       }
     }
-    console.log(reviewBatchArray);
+
     const { pageIndex } = this.state;
     return (
-      <div key="review-list">
+      <div key={pageIndex}>
         {reviewBatchArray.length !== 0
           ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
           : null}
-        <ButtonList numberOfPages={reviewBatchArray.length} />
+        <ButtonList changePage={this.changePage} numberOfPages={reviewBatchArray.length} />
       </div>
     );
   }
