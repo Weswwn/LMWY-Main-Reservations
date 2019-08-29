@@ -9,8 +9,10 @@ class ReviewList extends React.Component {
     const { listOfReviews } = this.props;
     this.state = {
       currentListOfReviews: listOfReviews,
+      pageIndex: 0,
     };
   }
+
 
   componentDidUpdate(prevProps) {
     const { listOfReviews } = this.props;
@@ -18,14 +20,14 @@ class ReviewList extends React.Component {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({
         currentListOfReviews: listOfReviews,
-        pageIndex: 1,
       });
     }
   }
 
-  render() {
-    const { currentListOfReviews } = this.state;
 
+  render() {
+    // Batch the reviews into batches of 40 and push into reviewBatchArray
+    const { currentListOfReviews } = this.state;
     const reviewBatchArray = [];
     if (currentListOfReviews.length > 40) {
       let tempCounter = 0;
@@ -40,13 +42,13 @@ class ReviewList extends React.Component {
         }
       }
     }
-
     console.log(reviewBatchArray);
     const { pageIndex } = this.state;
-    console.log(reviewBatchArray[pageIndex]);
     return (
       <div key="review-list">
-        {currentListOfReviews.map((eachReview) => <ReviewEntry eachReview={eachReview} />)}
+        {reviewBatchArray.length !== 0
+          ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
+          : null}
         <ButtonList numberOfPages={reviewBatchArray.length} />
       </div>
     );

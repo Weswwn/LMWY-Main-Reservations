@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PageButton = (props) => {
-  const { pageNumber } = props;
-  return (
-    <button type="button">{pageNumber}</button>
-  );
-};
+class PageButton extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { index } = this.props;
+    return (
+      <button type="button">{index}</button>
+    );
+  }
+}
 
 PageButton.propTypes = {
-  pageNumber: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default PageButton;
