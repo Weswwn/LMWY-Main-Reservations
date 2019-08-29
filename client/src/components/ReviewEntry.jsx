@@ -132,7 +132,6 @@ class ReviewEntry extends React.Component {
 
   handleShowMore(e) {
     e.preventDefault();
-    console.log('hi');
     this.setState((prevState) => ({
       readMe: !prevState.readMe,
     }));
