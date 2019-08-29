@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReviewEntry from './ReviewEntry.jsx';
+import ButtonList from './ButtonList.jsx';
 
 class ReviewList extends React.Component {
   constructor(props) {
@@ -17,20 +18,36 @@ class ReviewList extends React.Component {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({
         currentListOfReviews: listOfReviews,
+        pageIndex: 1,
       });
     }
   }
 
   render() {
     const { currentListOfReviews } = this.state;
-    // Create the pages of reviews here
-    // console.log(this.props.listOfReviews);
-    // if (currentListOfReviews.length > 40) {
 
-    // }
+    const reviewBatchArray = [];
+    if (currentListOfReviews.length > 40) {
+      let tempCounter = 0;
+      for (let i = 40; i < currentListOfReviews.length; i += 40) {
+        reviewBatchArray.push(currentListOfReviews.slice(tempCounter, i));
+        if (i + 40 > currentListOfReviews.length) {
+          const amountleft = currentListOfReviews.length - i;
+          const finalAmount = amountleft + i;
+          reviewBatchArray.push(currentListOfReviews.slice(i, finalAmount));
+        } else {
+          tempCounter += i;
+        }
+      }
+    }
+
+    console.log(reviewBatchArray);
+    const { pageIndex } = this.state;
+    console.log(reviewBatchArray[pageIndex]);
     return (
       <div key="review-list">
         {currentListOfReviews.map((eachReview) => <ReviewEntry eachReview={eachReview} />)}
+        <ButtonList numberOfPages={reviewBatchArray.length} />
       </div>
     );
   }

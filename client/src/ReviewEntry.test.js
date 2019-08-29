@@ -122,7 +122,7 @@ describe('Test all states and corresponding DOM renders', () => {
   });
 });
 
-describe('Test all states and corresponding DOM renders', () => {
+describe('Test Conditional Rendering and other states', () => {
   const review = {
     id: 98,
     overallRating: 4,
@@ -178,7 +178,7 @@ describe('Test all states and corresponding DOM renders', () => {
     readMe: false,
   };
   // ------------------ READ MORE BUTTON TEST -------------------------
-  it('Test that the "readMe" state bangs when "Read ME" button is pressed', () => {
+  it('Test that the "readMe" state changes when "Read ME" button is pressed', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
     expect(wrapper.find('CommentButton').text()).toEqual('+ Read More');
     expect(wrapper.state('readMe')).toEqual(false);
