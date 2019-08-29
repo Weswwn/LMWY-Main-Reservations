@@ -25,11 +25,17 @@ class ReviewList extends React.Component {
     }
   }
 
-  changePage(indexClicked) {
-    console.log(indexClicked);
-    this.setState({
-      pageIndex: indexClicked,
+  changePage(indexClicked, e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
     });
+    setTimeout(() => {
+      this.setState({
+        pageIndex: indexClicked,
+      });
+    }, 1000);
   }
 
 
@@ -46,7 +52,7 @@ class ReviewList extends React.Component {
           const finalAmount = amountleft + i;
           reviewBatchArray.push(currentListOfReviews.slice(i, finalAmount));
         } else {
-          tempCounter += i;
+          tempCounter += 40;
         }
       }
     } else {
@@ -59,7 +65,8 @@ class ReviewList extends React.Component {
         {reviewBatchArray.length !== 0
           ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
           : null}
-        <ButtonList changePage={this.changePage} numberOfPages={reviewBatchArray.length} />
+        {currentListOfReviews.length !== 0
+          ? <ButtonList changePage={this.changePage} numberOfPages={reviewBatchArray.length} /> : null}
       </div>
     );
   }

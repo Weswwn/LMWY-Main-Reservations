@@ -5,7 +5,7 @@ const PageButton = (props) => {
   const { changePage } = props;
   const { index } = props;
   return (
-    <button onClick={() => changePage(index)} type="button">{index + 1}</button>
+    <button onClick={(e) => changePage(index, e)} type="button">{index + 1}</button>
   );
 };
 
