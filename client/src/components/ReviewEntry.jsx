@@ -261,27 +261,17 @@ class ReviewEntry extends React.Component {
 }
 ReviewEntry.propTypes = {
   eachReview: PropTypes.shape({
-    overallRating: PropTypes.number,
-    foodRating: PropTypes.number,
-    serviceRating: PropTypes.number,
-    ambienceRating: PropTypes.number,
-    date_dined: PropTypes.string,
-    comment: PropTypes.string,
-    profilePicture: PropTypes.string,
-    location: PropTypes.string,
-    numberOfReviews: PropTypes.number,
-    username: PropTypes.string,
+    overallRating: PropTypes.number.isRequired,
+    foodRating: PropTypes.number.isRequired,
+    serviceRating: PropTypes.number.isRequired,
+    ambienceRating: PropTypes.number.isRequired,
+    date_dined: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
+    profilePicture: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    numberOfReviews: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
   }).isRequired,
-  overallRating: PropTypes.number.isRequired,
-  foodRating: PropTypes.number.isRequired,
-  serviceRating: PropTypes.number.isRequired,
-  ambienceRating: PropTypes.number.isRequired,
-  date_dined: PropTypes.string.isRequired,
-  comment: PropTypes.string.isRequired,
-  profilePicture: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  numberOfReviews: PropTypes.number.isRequired,
-  username: PropTypes.string.isRequired,
 };
 
 

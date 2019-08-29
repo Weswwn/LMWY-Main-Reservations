@@ -6,7 +6,7 @@ const ButtonList = (props) => {
   const { changePage } = props;
   const listOfButtons = [];
   for (let i = 0; i < numberOfPages; i++) {
-    listOfButtons.push(<span><PageButton changePage={changePage} index={i} /></span>);
+    listOfButtons.push(<span key={`${i}Button`}><PageButton changePage={changePage} index={i} /></span>);
   }
   return listOfButtons;
 };

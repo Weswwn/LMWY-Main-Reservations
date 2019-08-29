@@ -11,7 +11,7 @@ const PageButton = (props) => {
 
 PageButton.propTypes = {
   index: PropTypes.number.isRequired,
-  changePage: PropTypes.func,
+  changePage: PropTypes.func.isRequired,
 };
 
 export default PageButton;

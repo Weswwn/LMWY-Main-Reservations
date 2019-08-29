@@ -49,11 +49,13 @@ class ReviewList extends React.Component {
           tempCounter += i;
         }
       }
+    } else {
+      reviewBatchArray.push(currentListOfReviews);
     }
 
     const { pageIndex } = this.state;
     return (
-      <div key={pageIndex}>
+      <div key={`${pageIndex}Review`}>
         {reviewBatchArray.length !== 0
           ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
           : null}
