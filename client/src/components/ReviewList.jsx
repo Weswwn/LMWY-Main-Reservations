@@ -25,16 +25,16 @@ class ReviewList extends React.Component {
     }
   }
 
-  changePage(indexClicked, e) {
+  changePage(indexClicked) {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: 'auto',
     });
     setTimeout(() => {
       this.setState({
         pageIndex: indexClicked,
       });
-    }, 1000);
+    }, 0);
   }
 
 
@@ -72,7 +72,8 @@ class ReviewList extends React.Component {
 }
 
 ReviewList.propTypes = {
-  listOfReviews: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).isRequired,
+  listOfReviews:
+  PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).isRequired,
 };
 
 export default ReviewList;

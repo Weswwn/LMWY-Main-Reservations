@@ -87,7 +87,7 @@ const UserBody = styled.div`
 UserBody.displayName = 'UserBody';
 
 const VIP = styled.div`
-    text-transform: uppercase;
+    /* text-transform: uppercase;
     position: absolute;
     background-color: #fdaf08;
     padding: 2px 0.5rem;
@@ -96,6 +96,14 @@ const VIP = styled.div`
     font-weight: 700;
     top: -2px;
     color: #fff;
+    left: 0; */
+    position: absolute;
+    background-color: #fdaf08;
+    border-radius: 1rem;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
     left: 0;
 `;
 VIP.displayName = 'VIP';

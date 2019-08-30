@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1567054098841" clover="3.2.0">
-  <project timestamp="1567054098841" name="All files">
-    <metrics statements="52" coveredstatements="51" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="5" elements="68" coveredelements="66" complexity="0" loc="52" ncloc="52" packages="1" files="1" classes="1"/>
+<coverage generated="1567133091488" clover="3.2.0">
+  <project timestamp="1567133091489" name="All files">
+    <metrics statements="54" coveredstatements="53" conditionals="12" coveredconditionals="11" methods="6" coveredmethods="5" elements="72" coveredelements="69" complexity="0" loc="54" ncloc="54" packages="1" files="1" classes="1"/>
     <file name="ReviewEntry.jsx" path="/Users/Admin/Documents/HRSF122/fec-project/client/src/components/ReviewEntry.jsx">
-      <metrics statements="52" coveredstatements="51" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="5"/>
+      <metrics statements="54" coveredstatements="53" conditionals="12" coveredconditionals="11" methods="6" coveredmethods="5"/>
       <line num="8" count="1" type="stmt"/>
       <line num="19" count="1" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
@@ -22,40 +22,42 @@
       <line num="73" count="1" type="stmt"/>
       <line num="76" count="1" type="stmt"/>
       <line num="87" count="1" type="stmt"/>
-      <line num="90" count="1" type="stmt"/>
-      <line num="94" count="1" type="stmt"/>
-      <line num="96" count="1" type="stmt"/>
-      <line num="102" count="1" type="stmt"/>
-      <line num="110" count="18" type="stmt"/>
-      <line num="111" count="18" type="stmt"/>
-      <line num="116" count="18" type="stmt"/>
-      <line num="117" count="18" type="stmt"/>
+      <line num="89" count="1" type="stmt"/>
+      <line num="101" count="1" type="stmt"/>
+      <line num="104" count="1" type="stmt"/>
+      <line num="108" count="1" type="stmt"/>
+      <line num="110" count="1" type="stmt"/>
+      <line num="116" count="1" type="stmt"/>
+      <line num="124" count="18" type="stmt"/>
+      <line num="125" count="18" type="stmt"/>
       <line num="130" count="18" type="stmt"/>
-      <line num="134" count="1" type="stmt"/>
-      <line num="135" count="1" type="stmt"/>
-      <line num="136" count="1" type="stmt"/>
-      <line num="145" count="19" type="stmt"/>
-      <line num="146" count="19" type="stmt"/>
-      <line num="149" count="19" type="stmt"/>
-      <line num="150" count="19" type="stmt"/>
-      <line num="151" count="19" type="stmt"/>
-      <line num="152" count="19" type="stmt"/>
-      <line num="155" count="19" type="stmt"/>
-      <line num="156" count="19" type="stmt"/>
-      <line num="157" count="19" type="stmt"/>
-      <line num="158" count="19" type="stmt"/>
-      <line num="161" count="19" type="stmt"/>
-      <line num="162" count="19" type="stmt"/>
+      <line num="131" count="18" type="stmt"/>
+      <line num="145" count="18" type="stmt"/>
+      <line num="149" count="1" type="stmt"/>
+      <line num="150" count="1" type="stmt"/>
+      <line num="159" count="19" type="stmt"/>
+      <line num="160" count="19" type="stmt"/>
+      <line num="163" count="19" type="stmt"/>
+      <line num="164" count="19" type="stmt"/>
       <line num="165" count="19" type="stmt"/>
-      <line num="168" count="19" type="stmt"/>
+      <line num="166" count="19" type="stmt"/>
       <line num="169" count="19" type="stmt"/>
-      <line num="170" count="19" type="cond" truecount="2" falsecount="0"/>
-      <line num="171" count="4" type="stmt"/>
-      <line num="172" count="4" type="stmt"/>
+      <line num="170" count="19" type="stmt"/>
+      <line num="171" count="19" type="stmt"/>
+      <line num="172" count="19" type="stmt"/>
       <line num="175" count="19" type="stmt"/>
-      <line num="249" count="0" type="cond" truecount="2" falsecount="0"/>
-      <line num="250" count="1" type="stmt"/>
-      <line num="262" count="1" type="stmt"/>
+      <line num="176" count="19" type="stmt"/>
+      <line num="179" count="19" type="stmt"/>
+      <line num="182" count="19" type="stmt"/>
+      <line num="183" count="19" type="stmt"/>
+      <line num="184" count="19" type="cond" truecount="2" falsecount="0"/>
+      <line num="185" count="4" type="stmt"/>
+      <line num="186" count="4" type="stmt"/>
+      <line num="188" count="19" type="stmt"/>
+      <line num="189" count="19" type="stmt"/>
+      <line num="264" count="0" type="cond" truecount="2" falsecount="0"/>
+      <line num="265" count="1" type="stmt"/>
+      <line num="277" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
