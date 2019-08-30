@@ -26,7 +26,6 @@ class ReviewList extends React.Component {
   }
 
   changePage(indexClicked, e) {
-    e.preventDefault();
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

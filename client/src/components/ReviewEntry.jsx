@@ -86,6 +86,20 @@ const UserBody = styled.div`
 `;
 UserBody.displayName = 'UserBody';
 
+const VIP = styled.div`
+    text-transform: uppercase;
+    position: absolute;
+    background-color: #fdaf08;
+    padding: 2px 0.5rem;
+    font-size: 12px;
+    border-radius: 1rem;
+    font-weight: 700;
+    top: -2px;
+    color: #fff;
+    left: 0;
+`;
+VIP.displayName = 'VIP';
+
 
 const UserData = styled.div`
   text-align: center;
@@ -112,7 +126,7 @@ class ReviewEntry extends React.Component {
     const {
       // eslint-disable-next-line camelcase
       overallRating, foodRating, serviceRating, ambienceRating, date_dined, comment, profilePicture,
-      location, numberOfReviews, username,
+      location, numberOfReviews, username, vipStatus,
     } = eachReview;
     this.state = {
       overallRating,
@@ -126,6 +140,7 @@ class ReviewEntry extends React.Component {
       numberOfReviews,
       username,
       readMe: false,
+      vipStatus,
     };
     this.handleShowMore = this.handleShowMore.bind(this);
   }
@@ -170,10 +185,11 @@ class ReviewEntry extends React.Component {
       commentFirstHalf = comment.slice(0, 301);
       commentSecondHalf = comment.slice(301, comment.length);
     }
-
+    const { vipStatus } = this.state;
     return (
       <Body className="review-entry-container">
         <UserBody className="user-data">
+          {vipStatus === 1 ? <VIP>VIP</VIP> : null}
           <Image id="profile-img" src={profilePicture} />
           <UserName>{username}</UserName>
           <UserData>{location}</UserData>
@@ -270,6 +286,7 @@ ReviewEntry.propTypes = {
     location: PropTypes.string.isRequired,
     numberOfReviews: PropTypes.number.isRequired,
     username: PropTypes.string.isRequired,
+    vipStatus: PropTypes.bool.isRequired,
   }).isRequired,
 };
 
