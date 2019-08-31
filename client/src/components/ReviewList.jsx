@@ -30,11 +30,10 @@ class ReviewList extends React.Component {
       top: 0,
       behavior: 'auto',
     });
-    setTimeout(() => {
-      this.setState({
-        pageIndex: indexClicked,
-      });
-    }, 0);
+
+    this.setState({
+      pageIndex: indexClicked,
+    });
   }
 
 
@@ -59,8 +58,9 @@ class ReviewList extends React.Component {
     }
 
     const { pageIndex } = this.state;
+    console.log(reviewBatchArray);
     return (
-      <div>
+      <div key={`${pageIndex}Reviews`}>
         {reviewBatchArray.length !== 0
         // Add a key for each review to get rid of the error in the console logs
           ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
