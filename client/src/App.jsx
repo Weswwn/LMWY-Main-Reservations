@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import moment from 'moment';
 import ReviewList from './components/ReviewList.jsx';
+import FilterDropDown from './components/FilterDropDown.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +33,10 @@ class App extends React.Component {
   render() {
     const { listOfReviews } = this.state;
     return (
-      <div><ReviewList listOfReviews={listOfReviews} /></div>
+      <div>
+        <div><FilterDropDown /></div>
+        <div><ReviewList listOfReviews={listOfReviews} /></div>
+      </div>
     );
   }
 }

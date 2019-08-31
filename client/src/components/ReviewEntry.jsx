@@ -294,7 +294,7 @@ ReviewEntry.propTypes = {
     location: PropTypes.string.isRequired,
     numberOfReviews: PropTypes.number.isRequired,
     username: PropTypes.string.isRequired,
-    vipStatus: PropTypes.bool.isRequired,
+    vipStatus: PropTypes.number.isRequired,
   }).isRequired,
 };
 

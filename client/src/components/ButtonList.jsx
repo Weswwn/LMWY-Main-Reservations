@@ -13,8 +13,7 @@ const Body = styled.span`
   width: 100%;
   margin: 0 70px 0 500px;
   padding: 1rem 0 1rem 0;
-  /* margin: 0 0 0 50%; */
-  height: auto;
+  height: 60px;
 `;
 Body.displayName = 'Body';
 

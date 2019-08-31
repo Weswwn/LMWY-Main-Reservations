@@ -145,7 +145,7 @@ describe('Test Conditional Rendering and other states', () => {
   it('Should render the conditional for when the reviewer dined less than 8 days ago ', () => {
     const wrapper = shallow(<ReviewEntry eachReview={review} />);
 
-    expect(wrapper.find('ReviewDate').text()).toEqual(' ·  Dined 3 days ago');
+    expect(wrapper.find('ReviewDate').text()).toEqual(' ·  Dined 4 days ago');
   });
 
   // ------------------ COMMENT CONDITIONAL RENDER TEST -------------------------
