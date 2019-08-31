@@ -24,7 +24,7 @@ const ButtonList = (props) => {
   const { currentIndex } = props;
   const listOfButtons = [];
   for (let i = 0; i < numberOfPages; i++) {
-    listOfButtons.push(<PageButton currentIndex={currentIndex} changePage={changePage} index={i} />);
+    listOfButtons.push(<PageButton key={`${i}numberOfPages`} currentIndex={currentIndex} changePage={changePage} index={i} />);
   }
   return (
     <Body>{ listOfButtons }</Body>
@@ -33,7 +33,7 @@ const ButtonList = (props) => {
 
 ButtonList.propTypes = {
   numberOfPages: PropTypes.number.isRequired,
-  changePage: PropTypes.number.isRequired,
+  changePage: PropTypes.func.isRequired,
   currentIndex: PropTypes.number.isRequired,
 
 };

@@ -60,8 +60,9 @@ class ReviewList extends React.Component {
 
     const { pageIndex } = this.state;
     return (
-      <div key={`${pageIndex}Review`}>
+      <div>
         {reviewBatchArray.length !== 0
+        // Add a key for each review to get rid of the error in the console logs
           ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
           : null}
         {currentListOfReviews.length !== 0
@@ -72,8 +73,8 @@ class ReviewList extends React.Component {
 }
 
 ReviewList.propTypes = {
-  listOfReviews:
-  PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).isRequired,
+  listOfReviews: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])).isRequired,
+  // PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])).isRequired,
 };
 
 export default ReviewList;

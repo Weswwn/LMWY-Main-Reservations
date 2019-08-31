@@ -23,11 +23,6 @@ const Button = styled.div`
 `;
 Button.displayName = 'Button';
 
-// const Center = styled.span`
-//   display: flex;
-//   padding: 10px 0 0;
-// `;
-
 const PageButton = (props) => {
   const { changePage } = props;
   const { index } = props;
