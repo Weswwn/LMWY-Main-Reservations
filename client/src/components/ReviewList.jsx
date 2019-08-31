@@ -65,7 +65,7 @@ class ReviewList extends React.Component {
           ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
           : null}
         {currentListOfReviews.length !== 0
-          ? <ButtonList changePage={this.changePage} numberOfPages={reviewBatchArray.length} /> : null}
+          ? <ButtonList currentIndex={pageIndex} changePage={this.changePage} numberOfPages={reviewBatchArray.length} /> : null}
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import PageButton from './PageButton.jsx';
 
 const Body = styled.span`
@@ -20,12 +21,20 @@ Body.displayName = 'Body';
 const ButtonList = (props) => {
   const { numberOfPages } = props;
   const { changePage } = props;
+  const { currentIndex } = props;
   const listOfButtons = [];
   for (let i = 0; i < numberOfPages; i++) {
-    listOfButtons.push(<PageButton changePage={changePage} index={i} />);
+    listOfButtons.push(<PageButton currentIndex={currentIndex} changePage={changePage} index={i} />);
   }
   return (
     <Body>{ listOfButtons }</Body>
   );
+};
+
+ButtonList.propTypes = {
+  numberOfPages: PropTypes.number.isRequired,
+  changePage: PropTypes.number.isRequired,
+  currentIndex: PropTypes.number.isRequired,
+
 };
 export default ButtonList;
