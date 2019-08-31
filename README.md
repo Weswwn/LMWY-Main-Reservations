@@ -1,6 +1,6 @@
-# Project Name
+# IMWY-LABS
 
-> Project description
+> Review Component for a service based company
 
 ## Related Projects
 
@@ -16,7 +16,12 @@
 
 ## Usage
 
-> Some usage instructions
+> 1. npm start to seed data
+  2. npm run build to start webpack
+  3. npm run test to observe test coverage
+  4. npm run start to initiate server
+
+  This is a review module for a service based company to allow potential visitors/diners/etc... to read reviews.
 
 ## Requirements
 
