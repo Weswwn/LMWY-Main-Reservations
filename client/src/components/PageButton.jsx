@@ -32,7 +32,7 @@ const PageButton = (props) => {
   return (
     <div>
       {currentIndex === index
-        ? <Button style={{ border: '2px solid #da3743' }} onClick={(e) => changePage(index, e)} type="button">{index + 1}</Button>
+        ? <Button style={{ border: '2px solid #da3743', margin: '0 9px 0 9px' }} onClick={(e) => changePage(index, e)} type="button">{index + 1}</Button>
         : <Button onClick={(e) => changePage(index, e)} type="button">{index + 1}</Button> }
     </div>
   );
