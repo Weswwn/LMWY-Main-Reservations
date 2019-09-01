@@ -23,18 +23,25 @@ const Button = styled.div`
 `;
 Button.displayName = 'Button';
 
+
 const PageButton = (props) => {
   const { changePage } = props;
   const { index } = props;
+  const { currentIndex } = props;
 
   return (
-    <Button onClick={(e) => changePage(index, e)} type="button">{index + 1}</Button>
+    <div>
+      {currentIndex === index
+        ? <Button style={{ border: '2px solid #da3743' }} onClick={(e) => changePage(index, e)} type="button">{index + 1}</Button>
+        : <Button onClick={(e) => changePage(index, e)} type="button">{index + 1}</Button> }
+    </div>
   );
 };
 
 PageButton.propTypes = {
   index: PropTypes.number.isRequired,
   changePage: PropTypes.func.isRequired,
+  currentIndex: PropTypes.number.isRequired,
 };
 
 export default PageButton;
