@@ -34,7 +34,6 @@ class App extends React.Component {
     const { listOfReviews } = this.state;
     return (
       <div>
-        <div><FilterDropDown /></div>
         <div><ReviewList listOfReviews={listOfReviews} /></div>
       </div>
     );

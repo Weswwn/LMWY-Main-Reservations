@@ -87,16 +87,6 @@ const UserBody = styled.div`
 UserBody.displayName = 'UserBody';
 
 const VIP = styled.div`
-    /* text-transform: uppercase;
-    position: absolute;
-    background-color: #fdaf08;
-    padding: 2px 0.5rem;
-    font-size: 12px;
-    border-radius: 1rem;
-    font-weight: 700;
-    top: -2px;
-    color: #fff;
-    left: 0; */
     position: absolute;
     background-color: #fdaf08;
     border-radius: 1rem;
@@ -167,7 +157,7 @@ class ReviewEntry extends React.Component {
     } = this.state;
     let { dateDined } = this.state;
 
-
+    // =============== FORMATING DATES ==========================
     const todayDate = moment();
     const todayYear = todayDate.format('YYYY');
     const todayMonth = todayDate.format('MM');
@@ -187,6 +177,7 @@ class ReviewEntry extends React.Component {
     const daySinceDining = currentDate.diff(reviewDate, 'days');
     // console.log(daySinceDining);
 
+    // =============== SPLITING COMMENTS ==========================
     let commentFirstHalf = null;
     let commentSecondHalf = null;
     if (comment.length > 300) {
