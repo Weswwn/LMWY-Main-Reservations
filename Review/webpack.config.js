@@ -2,6 +2,13 @@ const path = require('path');
 
 module.exports = {
   entry: './client/src/index.jsx',
+  // externals: {
+  //   "styled-components": {
+  //     commonjs: "styled-components",
+  //     commonjs2: "styled-components",
+  //     amd: "styled-components",
+  //   }
+  // },
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
