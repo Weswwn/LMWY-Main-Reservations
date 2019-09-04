@@ -1,5 +1,5 @@
 const faker = require('faker');
-const db = require('./dbConnection.js.js');
+const db = require('./dbConnection.js');
 
 const genUserData = () => {
   const userArray = [];
