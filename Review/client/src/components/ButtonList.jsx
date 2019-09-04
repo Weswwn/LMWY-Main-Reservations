@@ -10,9 +10,9 @@ const Body = styled.span`
   align-items: center;
   justify-content: center; 
   height: 30%;
-  max-width: 50;
   width: 100%;
-  margin: 0 70px 0 95px;
+  max-width: 600px;
+  margin: 0 70px 0 200px;
   padding: 1rem 0 1rem 0;
   height: 60px;
 `;
@@ -24,7 +24,7 @@ const ButtonList = (props) => {
   const { currentIndex } = props;
   const listOfButtons = [];
   for (let i = 0; i < numberOfPages; i++) {
-    listOfButtons.push(<PageButton currentIndex={currentIndex} changePage={changePage} index={i} />);
+    listOfButtons.push(<PageButton key={`button${i}`} currentIndex={currentIndex} changePage={changePage} index={i} />);
   }
   return (
     <Body>{ listOfButtons }</Body>

@@ -64,7 +64,7 @@ class ReviewList extends React.Component {
       <div key={`${pageIndex}Reviews`}>
         {reviewBatchArray.length !== 0
         // Add a key for each review to get rid of the error in the console logs
-          ? reviewBatchArray[pageIndex].map((eachReview) => <ReviewEntry eachReview={eachReview} />)
+          ? reviewBatchArray[pageIndex].map((eachReview, index) => <ReviewEntry key={index} eachReview={eachReview} />)
           : null}
         {currentListOfReviews.length !== 0
           ? <ButtonList currentIndex={pageIndex} changePage={this.changePage} numberOfPages={reviewBatchArray.length} /> : null}

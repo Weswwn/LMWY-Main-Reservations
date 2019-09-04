@@ -39,6 +39,6 @@ class App extends React.Component {
     );
   }
 }
-window.App = App;
+window.Review = App;
 export default App;
 
