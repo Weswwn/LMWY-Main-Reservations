@@ -1,7 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/src/index.jsx',
+  //'./client/src/index.jsx',
+  //Changed entry point so that it no longer renders in the bundle.js and relies on proxy to render instead
+  entry: './client/src/App.jsx',
   // externals: {
   //   "styled-components": {
   //     commonjs: "styled-components",
