@@ -4,13 +4,13 @@ module.exports = {
   //'./client/src/index.jsx',
   //Changed entry point so that it no longer renders in the bundle.js and relies on proxy to render instead
   entry: './client/src/App.jsx',
-  // externals: {
-  //   "styled-components": {
-  //     commonjs: "styled-components",
-  //     commonjs2: "styled-components",
-  //     amd: "styled-components",
-  //   }
-  // },
+  externals: {
+    "styled-components": {
+      commonjs: "styled-components",
+      commonjs2: "styled-components",
+      amd: "styled-components",
+    }
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',

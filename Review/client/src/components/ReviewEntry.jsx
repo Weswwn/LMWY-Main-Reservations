@@ -1,12 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import StarRatingComponent from 'react-star-rating-component';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
 // ------ MAIN BODY STYLE --------
 const Body = styled.div`
-  font-family: 'Source Sans Pro', sans-serif;
+  @font-face {
+    font-family: 'Brandon';
+    src: local("HVD Fonts - BrandonText-Regular"),
+          local("BrandonText-Regular"),
+          url("HVD Fonts - BrandonText-Regular.otf");
+  }
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: 'Brandon';
   display: flex;
   height: 30%;
   max-width: 600px;
@@ -45,6 +52,7 @@ Image.displayName = 'Image';
 
 const Comment = styled.div`
   margin: 13px 0 0 0;
+  font-size: 14px;
   color: #2d333f;
 `;
 Comment.displayName = 'Comment';
