@@ -1,0 +1,67 @@
+{
+  "name": "reviews-component",
+  "version": "1.0.0",
+  "description": "Open table reviews component",
+  "private": true,
+  "author": "Wes",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "build": "npx webpack --mode development --watch",
+    "start": "nodemon ./server/Server.js",
+    "test": "jest --coverage",
+    "seed": "node ./db/dataGenerator.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "babel-jest": "^24.9.0",
+    "body-parser": "^1.19.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "jest": "^24.9.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "node": "^12.8.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-star-rating-component": "^1.4.1",
+    "regenerator-runtime": "^0.13.3",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "babel-preset-airbnb": "^4.0.1",
+    "eslint": "^6.2.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "react-test-renderer": "^16.9.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  },
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmwy-labs/ot-main-reviews.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/lmwy-labs/ot-main-reviews/issues"
+  },
+  "homepage": "https://github.com/lmwy-labs/ot-main-reviews#readme"
+}
