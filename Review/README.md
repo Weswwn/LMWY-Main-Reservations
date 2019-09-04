@@ -16,7 +16,7 @@
 
 ## Usage
 
-> 1. npm start to seed data
+> 1. npm run seed to seed data
   2. npm run build to start webpack
   3. npm run test to observe test coverage
   4. npm run start to initiate server
