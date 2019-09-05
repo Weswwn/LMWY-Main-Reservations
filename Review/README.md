@@ -17,6 +17,11 @@
 ## Usage
 
 > 1. npm run seed to seed data
+      DO THESE BEFORE RUNNING SEED SCRIPT:
+        A) You will have to change the mySQL login data to whatever password (or no password) you    set for your root
+        B) Create the database by writing: CREATE DATABASE reviewDB;
+        C) Run the schema.sql file by typing: mysql -u root -p 
+
   2. npm run build to start webpack
   3. npm run test to observe test coverage
   4. npm run start to initiate server
