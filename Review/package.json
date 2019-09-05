@@ -9,8 +9,9 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "build": "npx webpack --mode development --watch",
-    "start": "nodemon ./server/Server.js",
+    "build:dev": "npx webpack --mode development --watch",
+    "start:dev": "nodemon ./server/Server.js",
+    "start": "node ./server/Server.js",
     "test": "jest --coverage",
     "seed": "node ./db/dataGenerator.js"
   },

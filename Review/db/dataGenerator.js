@@ -84,3 +84,5 @@ const populateReviewsTable = (array) => {
 };
 
 populateReviewsTable(reviewArray);
+
+db.connection.end();
