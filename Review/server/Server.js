@@ -3,10 +3,12 @@ const bodyParser = require('body-parser');
 const db = require('../db/dbConnection.js');
 const cors = require('cors');
 const morgan = require('morgan');
+const compression = require('compression');
 
 const app = express();
 const port = 3001;
 
+app.use(compression());
 app.use(morgan('tiny'));
 app.use(cors());
 app.use(express.json());
