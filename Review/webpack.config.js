@@ -1,4 +1,5 @@
 const path = require('path');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   //'./client/src/index.jsx',
@@ -11,6 +12,17 @@ module.exports = {
       amd: "styled-components",
     }
   },
+  plugins: [
+    new CompressionPlugin({
+      filename: '[path].br[query]',
+      algorithm: 'brotliCompress',
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: { level: 11 },
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: false,
+    })
+  ],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
